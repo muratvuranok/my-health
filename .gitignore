@@ -1,0 +1,29 @@
+# macOS / editors
+.DS_Store
+*.swp
+.idea/
+.vscode/
+# Go
+bin/
+*.test
+coverage.out
+# React Native / Expo / Node
+node_modules/
+.expo/
+dist/
+build/
+android/.gradle/
+ios/Pods/
+# Local, sensitive and generated
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.mobileprovision
+*.sqlite
+*.db
+*.log
+# Do not commit synthetic or real exported personal health data
+exports/
