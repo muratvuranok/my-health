@@ -1,3 +1,9 @@
+Status: DRAFT
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
 # Product vision
 
 **My Health — Your Family Health Operating System** (working positioning).
