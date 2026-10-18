@@ -1,4 +1,10 @@
-# MH-IOT-01 — Connected devices (post-MVP)
+Status: DRAFT
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
+# IOT-001 / MH-IOT-01 — Connected devices (post-MVP)
 
 Research Apple HealthKit ingestion first, then manufacturer APIs/SDKs and BLE GATT profiles for compatible blood-pressure monitors, scales, thermometers and pulse oximeters. Verify model-level interoperability; brand name alone does not establish compatibility.
 
