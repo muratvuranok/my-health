@@ -1,3 +1,9 @@
+Status: ACCEPTED
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
 # STR-001 — Initial markets — ACCEPTED
 
 Date: 2026-10-18.
