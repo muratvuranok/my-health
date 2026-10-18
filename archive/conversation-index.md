@@ -1,3 +1,9 @@
+Status: DRAFT — historical index
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
 # Conversation index
 
 | Topic | Provenance | Status |
