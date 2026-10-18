@@ -1,3 +1,9 @@
+Status: ACCEPTED (implementation details OPEN)
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
 # ADR-012 — Microservices and Kubernetes learning-first architecture
 Date: 2026-10-18
 Status: ACCEPTED IN PRINCIPLE; implementation details and contract freeze OPEN
@@ -50,3 +56,9 @@ Cross-service contract tests, isolated DB migration tests, authz/tenant isolatio
 
 ## Impact on existing documents
 MASTER.md, SYSTEM_ARCHITECTURE.md, BACKEND_MASTER_PLAN_V1.md and CLAUDE_BACKEND_EXECUTION.md were written for modular monolith and now contain outdated assumptions. This ADR takes precedence for topology only. Do not start the earlier one-binary end-to-end coding order unchanged; first prepare reconciled microservice plan and contracts. The user's earlier local synthetic-data scope remains; any new production actions require GO.
+
+## Open issues raised in review 2026-10-18
+- [B1] PROPOSED ADR-013 suggests modular-monolith-first deployment plus k3d training; **does not override accepted microservices/Kubernetes strategy**.
+- [B2] Define who applies sync mutations when Sync cannot access Medication-owned data: synchronous service calls vs per-resource endpoints; map domain 409 and version headers through BFF; specify mixed batch success, idempotency, atomicity scope and timeout retries before freezing contract.
+- [B9] Rate limits across Kubernetes replicas require shared durable/distributed enforcement; investigate PostgreSQL-backed limits vs Redis. 'No Redis initially' cannot imply isolated per-replica security limits.
+- [B4] On-device reminders may stop being scheduled when mobile OS quotas/background limits apply; notification-service assumptions must not imply server push guarantees; see RELEASE_GATES.md.
