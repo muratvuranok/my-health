@@ -28,6 +28,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-007 ACCEPTED (conventions only):** contract-first OpenAPI 3.1, snake_case, errors/compatibility; endpoint schemas and contract freeze remain OPEN.
 - **ADR-015 ACCEPTED (principles only):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
 - **ADR-016 ACCEPTED (integration boundaries only):** per-platform adapters, minimal per-type data access, separated OS/user/server authorization and provenance; integration API draft NOT FROZEN.
+- **ADR-017 ACCEPTED (single-product account/workspace structure):** One My Health identity and application; user chooses intended purpose at onboarding; module visibility and workspace contexts vary by eligibility, but workspace admin roles never confer patient-data access. Professional modules remain PROPOSED and gated.
 - **ADR-012 ACCEPTED IN PRINCIPLE:** bounded microservices and Kubernetes learning-first target. **ADR-013 is only PROPOSED**; no reversion to monolith approved.
 - **IOT-001 / MH-IOT-01:** one unified post-MVP connected-device initiative (tracking alias, not a second decision).
 
@@ -70,6 +71,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/decisions/ADR-012-MICROSERVICES-KUBERNETES.md`](docs/decisions/ADR-012-MICROSERVICES-KUBERNETES.md) | ACCEPTED principle; details OPEN |
 | [`docs/decisions/ADR-015-NOTIFICATIONS-MESSAGING.md`](docs/decisions/ADR-015-NOTIFICATIONS-MESSAGING.md) | ACCEPTED messaging architecture; endpoint schema OPEN |
 | [`docs/decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md`](docs/decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md) | ACCEPTED integration boundaries; permission implementation OPEN |
+| [`docs/decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md`](docs/decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md) | ACCEPTED single product, modular workspaces; professional releases PROPOSED |
 | [`docs/decisions/ADR-013-PRODUCT-FIRST-DEPLOYMENT.md`](docs/decisions/ADR-013-PRODUCT-FIRST-DEPLOYMENT.md) | PROPOSED amendment; no override |
 | [`docs/decisions/ADR-014-LOCAL-ONLY-ALPHA.md`](docs/decisions/ADR-014-LOCAL-ONLY-ALPHA.md) | PROPOSED |
 | [`docs/backend/BACKEND_MASTER_PLAN_V1.md`](docs/backend/BACKEND_MASTER_PLAN_V1.md) | SUPERSEDED and ON HOLD |
