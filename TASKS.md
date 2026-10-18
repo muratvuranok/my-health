@@ -11,6 +11,7 @@ This is the single task-priority index; GitHub Issues/PRs contain details and ev
 | Task | Status | Reference | Gate |
 |---|---|---|---|
 | MH-REV-001 Reconcile planning documents | IN REVIEW | 2026-10-18 architecture review PR | Docs only |
+| MH-ADR-018 Optional paid modules, bundles and entitlements | PROPOSED / COMMERCIAL MODEL OPEN | ADR-018 | Store policy, pricing, downgrade and privacy review |
 | MH-ADR-017 Single product and purpose-based onboarding | ACCEPTED STRUCTURE / IMPLEMENTATION NOT AUTHORIZED | ADR-017 | Module release, consent and professional verification remain OPEN |
 | MH-FUTURE-002 Patient-controlled care team (dietitian/trainer/physician) | PROPOSED / BACKLOG | docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md | Medical/legal review and explicit owner GO |
 | MH-FUTURE-001 Coach workspace and consented member tracking | PROPOSED / BACKLOG | docs/product/FUTURE-001-COACH-WORKSPACE.md | Separate owner GO and privacy/authorization ADR required |
