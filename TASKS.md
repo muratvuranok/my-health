@@ -12,6 +12,9 @@ This is the single task-priority index; GitHub Issues/PRs contain details and ev
 |---|---|---|---|
 | MH-REV-001 Reconcile planning documents | IN REVIEW | 2026-10-18 architecture review PR | Docs only |
 | MH-ADR-005 Cross-platform decision | PROPOSED | ADR-005 | Owner acceptance |
+| MH-ADR-016 Integration permission matrix and typed contracts | ARCHITECTURE ACCEPTED / API DRAFT | ADR-016, INTEGRATION_API_DRAFT.md | Real device and privacy validation OPEN |
+| MH-ADR-015 Notification, email and push | ARCHITECTURE ACCEPTED / API DRAFT | ADR-015, NOTIFICATION_API_DRAFT.md | Provider selection and real delivery OPEN |
+| MH-ADR-007 API conventions | CONVENTIONS ACCEPTED / SCHEMAS OPEN | ADR-007 | OpenAPI contract freeze NOT granted |
 | MH-ADR-009 Medication time/domain rules | OPEN | ADR-009 | Owner/domain review |
 | MH-ADR-010 Sync and encryption | OPEN | ADR-010 | Owner/security/legal review |
 | MH-ADR-013 Monolith-first amendment | PROPOSED | ADR-013 | Does NOT override ADR-012 |
