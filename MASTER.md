@@ -58,6 +58,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/product/PRODUCT_VISION.md`](docs/product/PRODUCT_VISION.md) | DRAFT vision |
 | [`docs/product/MVP_SCOPE.md`](docs/product/MVP_SCOPE.md) | DRAFT under revision |
 | [`docs/product/FUTURE-001-COACH-WORKSPACE.md`](docs/product/FUTURE-001-COACH-WORKSPACE.md) | PROPOSED / BACKLOG |
+| [`docs/product/FUTURE-003-NUTRITION-MEAL-PLANS.md`](docs/product/FUTURE-003-NUTRITION-MEAL-PLANS.md) | PROPOSED — dietitian plans and client meal tracking |
 | [`docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md`](docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md) | PROPOSED / BACKLOG; clinical use gated |
 | [`docs/product/OVERVIEW.md`](docs/product/OVERVIEW.md) | DRAFT product overview |
 | [`docs/business/STARTUP_STRATEGY.md`](docs/business/STARTUP_STRATEGY.md) | DRAFT hypotheses |
