@@ -38,6 +38,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-010 DRAFT/OPEN:** server-readable vs E2EE vs local-only alpha option, sync/conflict protocol and recovery; ADR-002 remains accepted.
 - **ADR-013 PROPOSED:** modular-monolith-first deployment amendment to ADR-012 (NOT accepted).
 - **ADR-014 PROPOSED:** local-only alpha (NOT accepted).
+- **ADR-018 PROPOSED:** optional purchasable modules and subscription entitlement models; core medication safety not paywalled, commercial pricing and provider OPEN. One account and modular contexts remain accepted under ADR-017.
 - **ADR-006/008/011 NOT YET WRITTEN:** tech stack versions, auth state machine, consent/grants/retention. ADR-007 conventions are accepted but field-level OpenAPI is NOT approved. No implicit choice.
 - Hosting region and Türkiye/Azerbaijan legal/KVKK transfer review OPEN; pricing and business model OPEN; trademark/brand clearance OPEN; activation metric OPEN; web timing OPEN; actual Health Connect/HealthKit OS matrix OPEN.
 
@@ -72,6 +73,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/decisions/ADR-015-NOTIFICATIONS-MESSAGING.md`](docs/decisions/ADR-015-NOTIFICATIONS-MESSAGING.md) | ACCEPTED messaging architecture; endpoint schema OPEN |
 | [`docs/decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md`](docs/decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md) | ACCEPTED integration boundaries; permission implementation OPEN |
 | [`docs/decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md`](docs/decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md) | ACCEPTED single product, modular workspaces; professional releases PROPOSED |
+| [`docs/decisions/ADR-018-MODULAR-ENTITLEMENTS-MONETIZATION.md`](docs/decisions/ADR-018-MODULAR-ENTITLEMENTS-MONETIZATION.md) | PROPOSED commercial packaging and entitlements |
 | [`docs/decisions/ADR-013-PRODUCT-FIRST-DEPLOYMENT.md`](docs/decisions/ADR-013-PRODUCT-FIRST-DEPLOYMENT.md) | PROPOSED amendment; no override |
 | [`docs/decisions/ADR-014-LOCAL-ONLY-ALPHA.md`](docs/decisions/ADR-014-LOCAL-ONLY-ALPHA.md) | PROPOSED |
 | [`docs/backend/BACKEND_MASTER_PLAN_V1.md`](docs/backend/BACKEND_MASTER_PLAN_V1.md) | SUPERSEDED and ON HOLD |
