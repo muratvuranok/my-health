@@ -1,0 +1,14 @@
+# Security and sensitive data handling
+
+My Health processes potentially sensitive personal health data. Repository is private but **not** an approved health-data vault.
+
+- Never commit actual medical records, names tied to diagnoses, prescriptions, health exports, tokens, private keys or chat transcripts containing personal health information.
+- Use synthetic fixtures and redacted examples only.
+- Threat-model account takeover, cross-user access, notifications on lock screens, lost devices, sync conflicts, recovery, backups, logs and analytics.
+- Encrypt local sensitive records; minimize server data; enforce least privilege, audit access, secure deletion and explicit consent.
+- Evaluate Türkiye KVKK, Azerbaijan privacy law and any applicable medical-device regulation with qualified counsel before live rollout.
+- HealthKit permissions are per data type; data imported from HealthKit must not be used for advertising or sold to brokers.
+- No autonomous dosage change, diagnosis or treatment recommendations.
+- Independent security review and verified restore/recovery before live-data TestFlight GO.
+
+Report vulnerabilities privately to repository maintainers; do not open public issues containing sensitive details.
