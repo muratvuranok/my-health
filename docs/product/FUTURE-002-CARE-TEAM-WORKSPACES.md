@@ -12,6 +12,9 @@ This is **one My Health application and identity system**, not separate patient/
 ## Vision and relationship to FUTURE-001
 My Health may connect an individual's personal health timeline to distinct approved professional relationships: physician, registered dietitian/nutrition professional, trainer/coach and eventually caregiver. A patient could invite a verified professional or accept an invitation, authorize exact data categories and duration, and revoke access later. Professionals may have caseloads of 50+ clients and organization/team workspaces. This extends [FUTURE-001 Coach Workspace](FUTURE-001-COACH-WORKSPACE.md); it does NOT approve real clinical workflows, prescribing, automated dosing, or unrestricted professional access.
 
+## Nutrition module design detail
+The proposed dietitian-created weekly menu and client meal tracking experience is described in [FUTURE-003](FUTURE-003-NUTRITION-MEAL-PLANS.md), including day/meal slots, portions, alternatives, adherence logging, future-effective versions and permission checks. It remains PROPOSED and separate from medication schedule authority.
+
 ## Example scenarios — hypotheses, not MVP commitments
 1. Dietitian and patient: patient selectively shares weight trend, body measurements, food-related check-ins and **optionally** medication list or allergies where clinically relevant and lawful. Dietitian drafts a weekly nutrition plan for patient review and acceptance; does not infer medical suitability from unverified medication lists.
 2. Trainer and member: person shares weight and agreed activity/measurement data; trainer drafts exercise sessions and check-in requests. Medication list is hidden unless independently and explicitly granted and demonstrably necessary.
