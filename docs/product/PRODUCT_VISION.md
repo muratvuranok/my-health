@@ -22,3 +22,6 @@ Türkiye and Azerbaijan first; Turkish, Azerbaijani and English UI; global-ready
 
 ## Outcomes
 Reduced missed tracking tasks, higher user confidence and repeat use. Do not claim clinical outcome improvement without evidence.
+
+## Accepted unified product account direction (ADR-017)
+My Health is one account-based product with purpose-based onboarding. A person may track their own health, and when independently authorized, manage professional or caregiver workspaces through selectable modules without creating a separate login or moving ownership of health records. Medical, dietary, training and family sharing releases remain separate future proposals, not initial MVP obligations. Workspace administration alone never authorizes clinical data access.
