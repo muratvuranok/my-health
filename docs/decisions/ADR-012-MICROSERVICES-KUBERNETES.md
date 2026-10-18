@@ -62,3 +62,8 @@ MASTER.md, SYSTEM_ARCHITECTURE.md, BACKEND_MASTER_PLAN_V1.md and CLAUDE_BACKEND_
 - [B2] Define who applies sync mutations when Sync cannot access Medication-owned data: synchronous service calls vs per-resource endpoints; map domain 409 and version headers through BFF; specify mixed batch success, idempotency, atomicity scope and timeout retries before freezing contract.
 - [B9] Rate limits across Kubernetes replicas require shared durable/distributed enforcement; investigate PostgreSQL-backed limits vs Redis. 'No Redis initially' cannot imply isolated per-replica security limits.
 - [B4] On-device reminders may stop being scheduled when mobile OS quotas/background limits apply; notification-service assumptions must not imply server push guarantees; see RELEASE_GATES.md.
+
+## Integration and delivery architecture refinement (2026-10-18)
+- [ADR-015](ADR-015-NOTIFICATIONS-MESSAGING.md) owns notification/email/push orchestration principles; device-local reminders remain on-device and are NOT guaranteed by push.
+- [ADR-016](ADR-016-INTEGRATIONS-PERMISSIONS.md) defines native HealthKit/Health Connect per-type read adapters, explicit consent/authorization separation, ingestion provenance and future vendor boundaries. This is a logical integration boundary, not automatically an additional Kubernetes deployment.
+- Both preserve the accepted bounded microservice topology. Notification and integration operation-level requests/responses are drafts until OpenAPI freeze.
