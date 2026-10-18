@@ -43,9 +43,9 @@ Headers: `Idempotency-Key: <opaque UUID>`.
 ```
 202 candidate:
 ```json
-{"data":{"batch_id":"uuid","status":"queued","accepted_items":1,"duplicate_items":0,"rejected_items":0,"results":[],"operation_id":"uuid"},"request_id":"req_example"}
+{"data":{"batch_id":"uuid","status":"queued","operation_id":"uuid"},"request_id":"req_example"}
 ```
-Important: **202 queued cannot truthfully claim accepted_items** unless server validated and persisted outcomes synchronously; choose either 200/207 style per-item finalized result or 202 with only `operation_id`+poll resource. Batch atomicity and partial successes must be decided under ADR-010/ADR-007. Maximum batch size, decimal precision, source identity and replay retention OPEN. This example is a draft showing an issue, NOT a frozen contract.
+A **202 queued** response must not claim counts of inserted records; use the operation resource for finalized per-item results. Alternative synchronous 200 with finalized per-item results remains OPEN. Batch atomicity and partial successes must be decided under ADR-010/ADR-007. Maximum batch size, decimal precision, source identity and replay retention OPEN; this is NOT a frozen contract.
 
 ## GET /v1/profiles/{profile_id}/measurement-imports/{batch_id}
 200 draft:
