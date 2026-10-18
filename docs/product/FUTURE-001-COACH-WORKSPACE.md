@@ -6,6 +6,9 @@ Superseded by: None
 
 # FUTURE-001 — Trainer / coach workspace concept
 
+## Single-product integration
+Per [ADR-017](../decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md), this is a **module/workspace context within the one My Health product and account system**, not a separate trainer app. Coach onboarding selection is not proof of professional eligibility or permission to access client health records. This module remains PROPOSED.
+
 ## Motivation
 Some individuals already report body weight, circumferences, body composition and weekly training updates to a trainer. My Health could let individuals selectively share relevant progress with a coach in one place. This is a future opportunity hypothesis, not approved MVP scope, a medical service, or permission to expose sensitive health information.
 
