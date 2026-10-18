@@ -11,6 +11,7 @@ This is the single task-priority index; GitHub Issues/PRs contain details and ev
 | Task | Status | Reference | Gate |
 |---|---|---|---|
 | MH-REV-001 Reconcile planning documents | IN REVIEW | 2026-10-18 architecture review PR | Docs only |
+| MH-FUTURE-002 Patient-controlled care team (dietitian/trainer/physician) | PROPOSED / BACKLOG | docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md | Medical/legal review and explicit owner GO |
 | MH-FUTURE-001 Coach workspace and consented member tracking | PROPOSED / BACKLOG | docs/product/FUTURE-001-COACH-WORKSPACE.md | Separate owner GO and privacy/authorization ADR required |
 | MH-ADR-005 Cross-platform decision | PROPOSED | ADR-005 | Owner acceptance |
 | MH-ADR-016 Integration permission matrix and typed contracts | ARCHITECTURE ACCEPTED / API DRAFT | ADR-016, INTEGRATION_API_DRAFT.md | Real device and privacy validation OPEN |
