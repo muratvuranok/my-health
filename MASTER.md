@@ -55,6 +55,8 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`SECURITY.md`](SECURITY.md) | DRAFT — protection requirements |
 | [`docs/product/PRODUCT_VISION.md`](docs/product/PRODUCT_VISION.md) | DRAFT vision |
 | [`docs/product/MVP_SCOPE.md`](docs/product/MVP_SCOPE.md) | DRAFT under revision |
+| [`docs/product/FUTURE-001-COACH-WORKSPACE.md`](docs/product/FUTURE-001-COACH-WORKSPACE.md) | PROPOSED / BACKLOG |
+| [`docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md`](docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md) | PROPOSED / BACKLOG; clinical use gated |
 | [`docs/product/OVERVIEW.md`](docs/product/OVERVIEW.md) | DRAFT product overview |
 | [`docs/business/STARTUP_STRATEGY.md`](docs/business/STARTUP_STRATEGY.md) | DRAFT hypotheses |
 | [`docs/architecture/SYSTEM_ARCHITECTURE.md`](docs/architecture/SYSTEM_ARCHITECTURE.md) | SUPERSEDED topology; historical |
