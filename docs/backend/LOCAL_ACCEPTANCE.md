@@ -1,3 +1,9 @@
+Status: DRAFT — local acceptance plan, not execution GO
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
 # One-command local delivery and acceptance checklist
 
 ## Expected commands
