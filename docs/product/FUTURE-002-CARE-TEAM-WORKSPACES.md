@@ -6,6 +6,9 @@ Superseded by: None
 
 # FUTURE-002 — Patient-controlled care team and professional workspaces
 
+## Accepted product integration direction (ADR-017)
+This is **one My Health application and identity system**, not separate patient/coach/dietitian/doctor products. Purpose-based onboarding can enable a workspace/context and relevant UI modules once each module is approved; users can switch between personal and professional contexts under the same account. Workspace owner/admin is not an unrestricted health-data superuser. Professional features in this document remain PROPOSED despite the accepted single-product structure. See [ADR-017](../decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md).
+
 ## Vision and relationship to FUTURE-001
 My Health may connect an individual's personal health timeline to distinct approved professional relationships: physician, registered dietitian/nutrition professional, trainer/coach and eventually caregiver. A patient could invite a verified professional or accept an invitation, authorize exact data categories and duration, and revoke access later. Professionals may have caseloads of 50+ clients and organization/team workspaces. This extends [FUTURE-001 Coach Workspace](FUTURE-001-COACH-WORKSPACE.md); it does NOT approve real clinical workflows, prescribing, automated dosing, or unrestricted professional access.
 
