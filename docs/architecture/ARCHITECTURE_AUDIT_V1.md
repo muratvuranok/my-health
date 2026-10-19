@@ -5,6 +5,8 @@ Supersedes: None
 Superseded by: None
 
 # MY HEALTH — ARCHITECTURE & API CONTRACT AUDIT V1
+
+> **Historical 2026-10-18 review, not current platform/topology authority.** The React Native/Expo and modular-monolith recommendations below have been superseded by accepted ADR-005 native Swift/SwiftUI + Kotlin/Compose and accepted ADR-012 Go microservices/Kubernetes (reaffirmed 2026-10-19). Recommendations and links remain for audit trail only. Contract freeze remains NO-GO; this annotation does not approve implementation.
 Date: 2026-10-18. Status: REVIEW IN PROGRESS / CONTRACT NOT FROZEN.
 Scope: Mobile iOS+Android, Go API, PostgreSQL, auth, medication/measurements, sync, privacy, testing, migration. This is an evidence-backed first audit, not a claim of exhaustive global research or tested implementation.
 
