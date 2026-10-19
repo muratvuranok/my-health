@@ -5,6 +5,8 @@ Supersedes: None
 Superseded by: None
 
 # MY HEALTH — ARCHITECTURE & API CONTRACT AUDIT V1
+
+> **Historical review note (2026-10-19):** Earlier React Native/Expo advice is superseded by owner-accepted ADR-005 native iOS and Android decision. The audit is not implementation authority.
 Date: 2026-10-18. Status: REVIEW IN PROGRESS / CONTRACT NOT FROZEN.
 Scope: Mobile iOS+Android, Go API, PostgreSQL, auth, medication/measurements, sync, privacy, testing, migration. This is an evidence-backed first audit, not a claim of exhaustive global research or tested implementation.
 
