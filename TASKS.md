@@ -8,6 +8,19 @@ Superseded by: None
 
 This is the single task-priority index; GitHub Issues/PRs contain details and evidence. No older handoff activates work on its own.
 
+## OWNER DECISION REQUIRED — before any new prototype task
+
+**No new prototype or implementation task may begin until these owner decisions are explicitly recorded.** These are choices to be made, not implicit approvals, and they do not authorize use of real health data.
+
+1. **ADR-005 mobile platform:** ACCEPT / REJECT the React Native + TypeScript cross-platform proposal.
+2. **ADR-013 modular-monolith-first deployment amendment:** ACCEPT / REJECT. Accepted ADR-012 microservices/Kubernetes remains effective until an explicit change.
+3. **ADR-014 local-only alpha:** ACCEPT / REJECT. Accepted ADR-002 cloud-sync architectural intent remains unchanged unless amended.
+4. **E3 caregiver-managed profile in MVP:** YES / NO; reconcile with ADR-001 individual-first and separately controlled future grants.
+5. **ADR-017 single-product structure acceptance:** CONFIRM / REVISE the documented owner-chat acceptance scope. This does not authorize professional schemas or modules without interviews.
+6. **Repository visibility:** Is external review finished? YES / NO; if YES, owner should return the temporarily public repository to private via GitHub settings.
+
+Additional pending owner approvals: **ADR-015 notification architecture**, **ADR-016 integration architecture**, field-level OpenAPI contract, encryption/hosting, clinician permissions and commercial pricing. Do not interpret merger of a documentation PR as acceptance of these proposals.
+
 | Task | Status | Reference | Gate |
 |---|---|---|---|
 | MH-REV-001 Reconcile planning documents | IN REVIEW | 2026-10-18 architecture review PR | Docs only |
