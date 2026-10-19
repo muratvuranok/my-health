@@ -30,7 +30,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-012 ACCEPTED IN PRINCIPLE:** bounded microservices and Kubernetes learning-first target. **ADR-013 is only PROPOSED**; no reversion to monolith approved.
 - **IOT-001 / MH-IOT-01:** one unified post-MVP connected-device initiative (tracking alias, not a second decision).
 
-- **ADR-005 ACCEPTED (revised later 2026-10-19):** Owner withdrew the earlier same-day React Native/Expo selection (main commit 4d9d20b). Current mobile direction is **native iOS Swift/SwiftUI plus Android Kotlin/Jetpack Compose**. First prototype/release platform order and real-device validation remain OPEN.
+- **ADR-005 ACCEPTED (revised later 2026-10-19):** Owner withdrew the earlier same-day React Native/Expo selection (main commit 4d9d20b). Current mobile direction is **native iOS Swift/SwiftUI plus Android Kotlin/Jetpack Compose**. **MH-PROT-001 prototype platforms: iOS and Android in parallel (owner decision 2026-10-19).** Public release order and real-device validation remain OPEN.
 - **ADR-014 ACCEPTED (initial alpha only):** Owner selected local-only initial alpha 2026-10-19. ADR-002 future cloud-sync intent remains intact; ADR-010 OPEN.
 ## Open decisions / proposals
 - **ADR-015 PROPOSED (no owner acceptance recorded):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
@@ -44,7 +44,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - Hosting region and Türkiye/Azerbaijan legal/KVKK transfer review OPEN; pricing and business model OPEN; trademark/brand clearance OPEN; activation metric OPEN; web timing OPEN; actual Health Connect/HealthKit OS matrix OPEN.
 
 ## Implementation status
-**ARCHITECTURE STATUS:** ADR-005 mobile, ADR-007 API conventions, ADR-012 microservices/Kubernetes, ADR-014 local-only initial alpha and ADR-017 single-product structure are accepted. The same-device caregiver-managed MVP profile is explicitly approved. ADR-015 notifications and ADR-016 integrations remain PROPOSED pending explicit owner approval; their API drafts are not frozen. **CONTRACT FREEZE: NO-GO** — existing API_CONTRACT and AUTH_DESIGN are outlines, not final OpenAPI request/response schemas. **CLAUDE_BACKEND_EXECUTION: SUSPENDED**; old local implementation GO is invalid for current topology and contract risk. A new implementation authorization requires an approved architecture/contract scope and current task. The MH-PROT-001 handoff is prepared for planning, with implementation requiring separate GO. No code or CI is implied by these documents. Synthetic prototypes may be separately authorized; no claim of passed tests or legal compliance.
+**ARCHITECTURE STATUS:** ADR-005 mobile, ADR-007 API conventions, ADR-012 microservices/Kubernetes, ADR-014 local-only initial alpha and ADR-017 single-product structure are accepted. The same-device caregiver-managed MVP profile is explicitly approved. ADR-015 notifications and ADR-016 integrations remain PROPOSED pending explicit owner approval; their API drafts are not frozen. **CONTRACT FREEZE: NO-GO** — existing API_CONTRACT and AUTH_DESIGN are outlines, not final OpenAPI request/response schemas. **CLAUDE_BACKEND_EXECUTION: SUSPENDED**; old local implementation GO is invalid for current topology and contract risk. A new implementation authorization requires an approved architecture/contract scope and current task. The owner selected **parallel native iOS + Android** for MH-PROT-001 (2026-10-19). The handoff remains **PLAN ONLY**; implementation requires a separate scoped GO. This selects prototype platforms only, not a parallel-agent system in this repository. No code or CI is implied by these documents. Synthetic prototypes may be separately authorized; no claim of passed tests or legal compliance.
 
 ## Release gates
 GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-02 Apple/Android platform feasibility OPEN; GATE-03 sync/encryption/restore OPEN; GATE-04 real-data beta/TestFlight BLOCKED until prerequisites and explicit GO.
@@ -90,7 +90,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/integrations/CONNECTED_DEVICES.md`](docs/integrations/CONNECTED_DEVICES.md) | DRAFT (IOT-001/MH-IOT-01) |
 | [`docs/testing/RELEASE_GATES.md`](docs/testing/RELEASE_GATES.md) | DRAFT gates OPEN |
 | [`docs/reviews/REVIEW-2026-10-18.md`](docs/reviews/REVIEW-2026-10-18.md) | DRAFT review record |
-| [`handoff/MH-PROT-001-SYNTHETIC-MOBILE-PROTOTYPE.md`](handoff/MH-PROT-001-SYNTHETIC-MOBILE-PROTOTYPE.md) | PREPARED, implementation GO separate |
+| [`handoff/MH-PROT-001-SYNTHETIC-MOBILE-PROTOTYPE.md`](handoff/MH-PROT-001-SYNTHETIC-MOBILE-PROTOTYPE.md) | PLAN ONLY; parallel native iOS + Android decided 2026-10-19; implementation GO separate |
 | [`handoff/CLAUDE_BACKEND_EXECUTION.md`](handoff/CLAUDE_BACKEND_EXECUTION.md) | SUSPENDED — NEVER EXECUTE |
 | [`handoff/LILI_AI_IMPLEMENTATION_CONTRACT.md`](handoff/LILI_AI_IMPLEMENTATION_CONTRACT.md) | DRAFT — must follow current task |
 | [`archive/conversation-index.md`](archive/conversation-index.md) | DRAFT metadata index; not verbatim transcript |
