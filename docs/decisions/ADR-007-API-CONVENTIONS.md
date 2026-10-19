@@ -22,7 +22,7 @@ My Health adopts **contract-first HTTP REST/JSON** for mobile-facing versioned A
 - Avoid boolean fields that later become multi-state without migration. Enums specify how older clients handle unknown values. No silent server defaults for medication dosing or safety-critical time semantics.
 
 ## Compatibility governance
-External `/v1` remains stable for clients already released. Add optional response fields compatibly; do not repurpose types/semantics or make previously optional request fields mandatory without versioning/negotiation. OpenAPI lint, oasdiff breaking-change review, generated TypeScript client compile and test fixtures required in CI before release. Service-internal contracts/events are separately versioned and rolling-deployment compatible (N-1 migration policy to define).
+External `/v1` remains stable for clients already released. Add optional response fields compatibly; do not repurpose types/semantics or make previously optional request fields mandatory without versioning/negotiation. OpenAPI lint, oasdiff breaking-change review, generated native Swift and Kotlin client compilation and relevant contract test fixtures to be included in future CI/release gates when the schemas are frozen (not a current prototype CI requirement). Service-internal contracts/events are separately versioned and rolling-deployment compatible (N-1 migration policy to define).
 
 ## Security and scope
 Authentication/authorization checked at data owner, not just gateway; never trust client supplied profile owner, event actor or service identity. Explicit upload size limits, rate limits shared across replicas, TLS, restricted CORS, PHI-free observability and retention apply across APIs.
