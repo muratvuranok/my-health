@@ -6,11 +6,11 @@ Superseded by: None
 
 # Notification API and event contracts — v1 design draft
 
-All client JSON keys snake_case, RFC 3339 UTC timestamps, IANA timezones, opaque IDs/UUIDs; versioned OpenAPI 3.1 must be authored before any implementation GO. `Authorization: Bearer <token>` is illustrative; exact session model OPEN. All endpoints enforce server-resolved owner/profile grants. Return stable machine `code`, `request_id`, `details`; localization belongs to clients. Do not expose target addresses or device push tokens to other users.
+All client JSON keys snake_case, RFC 3339 UTC timestamps, IANA timezones, opaque IDs/UUIDs; versioned OpenAPI 3.1 must be authored before any implementation GO. `Authorization: Bearer <token>` is illustrative; exact session model OPEN. All endpoints enforce server-resolved owner/profile grants. Errors MUST use the ADR-007 envelope `{"error":{"code":"lowercase_snake_case","request_id":"...","fields":[]}}`; successes use `{"data":...,"request_id":"..."}` except 204. No standalone top-level `code` or `details`; localization belongs to clients. Do not expose target addresses or device push tokens to other users.
 
 ## Resource: notification preference
 Suggested model `{category, channel, enabled, profile_id?, quiet_hours?:{start_local,end_local,timezone}, privacy_level:"generic"|"detailed", version}`.
-Categories are typed enums and should permit future additive values; marketing must have separate consent. Quiet hours must specify DST handling; safety reminders may have different eligibility rules. If-Match required for updates; conflict `412 PRECONDITION_FAILED` is distinct from domain `409`.
+Categories are typed enums and should permit future additive values; marketing must have separate consent. Quiet hours must specify DST handling; safety reminders may have different eligibility rules. If-Match required for updates; conflict `412 `precondition_failed`` is distinct from domain `409`.
 
 ### GET /v1/me/notification-preferences
 **200** `{"data":{"items":[{"category":"account_security","channel":"email","enabled":true,"privacy_level":"generic","version":1}]},"request_id":"req_example"}` (synthetic)
