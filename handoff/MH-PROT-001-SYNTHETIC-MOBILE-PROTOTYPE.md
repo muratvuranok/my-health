@@ -13,7 +13,7 @@ For Claude working with Lili AI on My Health only. The project owner recorded in
 MASTER.md, TASKS.md, docs/product/MVP_SCOPE.md, docs/testing/RELEASE_GATES.md, SECURITY.md, ADR-001–004, accepted ADR-005, ADR-007 (conventions only), ADR-012, ADR-014, ADR-017, open ADR-009 and ADR-010. ADR-015/016 are proposals, not approved technical implementations.
 
 ## Objective
-Plan an offline-first **native Swift/SwiftUI iOS and/or Kotlin/Jetpack Compose Android** mobile prototype using **only invented deterministic records**. The owner selected **parallel iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose)** prototype scope on 2026-10-19. This remains a planning-only handoff; development requires a **separate explicit implementation GO**. The future production release sequence remains OPEN. It should demonstrate initial personal health tracking and an **on-device caregiver-managed profile** without real accounts, web APIs or third-party integrations.
+Plan an offline-first **native Swift/SwiftUI iOS and Kotlin/Jetpack Compose Android** mobile prototype using **only invented deterministic records**. The owner selected **parallel iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose)** prototype scope on 2026-10-19. This remains a planning-only handoff; development requires a **separate explicit implementation GO**. The future production release sequence remains OPEN. It should demonstrate initial personal health tracking and an **on-device caregiver-managed profile** without real accounts, web APIs or third-party integrations.
 
 ## Intended clickable demo
 1. Onboarding: local language selection and prominent demo-data label, no real registration.
