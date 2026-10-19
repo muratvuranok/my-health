@@ -1,6 +1,7 @@
 Status: ACCEPTED — single-product account/workspace architecture; professional feature release remains PROPOSED
 Date: 2026-10-18
 Owner: My Health MASTER
+Owner acceptance: 2026-10-18 — explicit owner chat instruction that My Health is one product/account, with purpose selection at onboarding and profession-specific modules. Acceptance is structural only, not professional feature launch approval.
 Supersedes: None
 Superseded by: None
 
@@ -66,6 +67,9 @@ One account with personal+multiple professional contexts; changing purpose witho
 
 ## Relationship to existing decisions
 This **clarifies the single-product account architecture** while leaving ADR-001 initial personal scope, ADR-003 medication authority, ADR-012 deployment topology, ADR-015 messaging and ADR-016 integrations intact. The professional modules documented in FUTURE-001/002 remain **PROPOSED / POST-MVP** and are not implicitly approved for implementation. MVP scope, commercial plan and product/clinical launch gates remain OPEN.
+
+## Evidence to accept professional extensions (NOT satisfied)
+Obtain interview evidence showing at least one professional persona with willingness to pay, and demonstrate safe permissions via synthetic tests before incorporating any professional workspace entities, endpoints or tests into MVP. The owner-approved one-product direction alone is not evidence that the professional modules belong in MVP.
 
 ## Reversibility and evidence
 Changing account/data ownership after production is high-cost; adopting a single identity with separate workspace membership is intentional. Module bundle and exact onboarding content remain reversible through capability flags. Validate personas with user research and real cross-context authorization tests before expanding the module catalog.
