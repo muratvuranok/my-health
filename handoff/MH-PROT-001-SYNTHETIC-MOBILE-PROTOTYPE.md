@@ -1,4 +1,4 @@
-Status: PLAN ONLY — first native platform selection and explicit implementation GO required
+Status: PLAN ONLY — parallel native iOS + Android platform decision recorded; explicit implementation GO required
 Date: 2026-10-19
 Owner: My Health MASTER
 Supersedes: Historical MH-001/MH-002 planning instructions for prototype
@@ -7,13 +7,13 @@ Superseded by: None
 # MH-PROT-001 — Synthetic mobile prototype handoff
 
 ## Role and authority
-For Claude working with Lili AI on My Health only. The project owner recorded initial scope decisions on 2026-10-19, then **reversed the same-day React Native acceptance in favor of native iOS/Android**. The first prototype platform remains OPEN (iOS / Android / both). This document authorizes **preparation of the implementation plan**, not an unlimited coding instruction. Actual MH-PROT-001 coding requires a separate owner GO. The old full backend handoff remains SUSPENDED.
+For Claude working with Lili AI on My Health only. The project owner recorded initial scope decisions on 2026-10-19, then **reversed the same-day React Native acceptance in favor of native iOS/Android**. **Owner platform decision (2026-10-19): BOTH native iOS and Android prototypes will be planned in parallel.** This document authorizes **preparation of the implementation plan**, not an unlimited coding instruction. Actual MH-PROT-001 coding requires a separate owner GO. The old full backend handoff remains SUSPENDED.
 
 ## Required reading
 MASTER.md, TASKS.md, docs/product/MVP_SCOPE.md, docs/testing/RELEASE_GATES.md, SECURITY.md, ADR-001–004, accepted ADR-005, ADR-007 (conventions only), ADR-012, ADR-014, ADR-017, open ADR-009 and ADR-010. ADR-015/016 are proposals, not approved technical implementations.
 
 ## Objective
-Plan an offline-first **native Swift/SwiftUI iOS and/or Kotlin/Jetpack Compose Android** mobile prototype using **only invented deterministic records**. The first platform to implement is **OPEN** (iOS-first, Android-first, or both); this is a planning-only handoff until the owner selects a platform and separately authorizes implementation. It should demonstrate initial personal health tracking and an **on-device caregiver-managed profile** without real accounts, web APIs or third-party integrations.
+Plan an offline-first **native Swift/SwiftUI iOS and Kotlin/Jetpack Compose Android** mobile prototype using **only invented deterministic records**. The owner selected **parallel iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose)** prototype scope on 2026-10-19. This remains a planning-only handoff; development requires a **separate explicit implementation GO**. The future production release sequence remains OPEN. It should demonstrate initial personal health tracking and an **on-device caregiver-managed profile** without real accounts, web APIs or third-party integrations.
 
 ## Intended clickable demo
 1. Onboarding: local language selection and prominent demo-data label, no real registration.
@@ -34,7 +34,7 @@ Plan an offline-first **native Swift/SwiftUI iOS and/or Kotlin/Jetpack Compose A
 - Do not implement production authentication, email/push providers, health record integrations, medical decision logic, actual professional sharing or device BLE.
 
 ## Prototype acceptance criteria for a later implementation PR
-- Reproducible native app startup on the explicitly owner-selected initial platform(s), documented Xcode/Swift or Android SDK/Gradle versions and commands; synthetic screens visually verified in the matching simulator/emulator. Other platform stays PLANNED until separately scoped.
+- Reproducible native app startup on **both owner-selected native platforms**, documented Xcode/Swift or Android SDK/Gradle versions and commands; synthetic screens visually verified in the matching simulator/emulator. Neither platform may be marked DONE without its own build/test evidence; differences must be documented, not silently hidden.
 - Test personal versus managed-profile data isolation, schedule display, separate scheduled/actual times, immutable historical logs, measurements/units, offline demo behavior and fake data source.
 - No hidden network dependency; no real person identifiers or health data. No diagnosis, treatment recommendation or automatic dose adjustment.
 - Generic reminder privacy preview; pending iOS/Android scheduling and background access marked untested.
@@ -46,4 +46,4 @@ Plan an offline-first **native Swift/SwiftUI iOS and/or Kotlin/Jetpack Compose A
 ADR-009 medication time rules, ADR-010 server encryption and sync, field-level OpenAPI contract, real native HealthKit/Health Connect access, reliable OS alarms, secure health-data local storage, backup/restore, country privacy/law and all real-user release gates. None are waived.
 
 ## Handoff output expected now
-A small **native platform-specific** implementation plan with Swift protocols and/or Kotlin interfaces, project/file tree, **shared language-agnostic JSON** fake-fixture schema, deterministic-clock tests, device/OS matrix and estimated Xcode/Android native dependencies. Record the first-platform choice as **OWNER DECISION REQUIRED** and keep this handoff **PLAN ONLY** until the owner chooses iOS, Android or both and then grants separate scoped MH-PROT-001 implementation GO. Do not execute the suspended Claude backend task.
+Two coordinated **native platform-specific** implementation plans with Swift protocols **and** Kotlin interfaces, project/file tree, **shared language-agnostic JSON** fake-fixture schema, deterministic-clock tests, device/OS matrix, per-platform tests, parity criteria and estimated Xcode/Android native dependencies. Record **OWNER DECISION SATISFIED: both iOS and Android in parallel (2026-10-19)** and keep this handoff **PLAN ONLY** until the owner grants separate scoped MH-PROT-001 implementation GO for implementation. Do not execute the suspended Claude backend task.
