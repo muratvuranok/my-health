@@ -18,3 +18,12 @@ Superseded by: None
 - **2026-10-18 — ADR-019 — PROPOSED:** In-app patient/professional messaging explored in chat; privacy, retention, encryption and clinical release authorization OPEN.
 - **2026-10-18 — FUTURE-001/002/003 — PROPOSED / BACKLOG:** Coach, professional care team and nutrition meal plans are future research hypotheses, explicitly excluded from current MVP data model until interviews and owner GO.
 - **2026-10-19 — PR #21 round 2 review:** R1–R9 document reconciliation requested. Records/statuses above are scoped to evidence, not inferred from prior AI decisions. ADR-005/009/010/013/014 and hosting/brand/pricing remain OPEN or PROPOSED.
+
+## Owner decisions — 2026-10-19 (explicit user statement)
+- **ADR-005 ACCEPTED:** React Native + Expo for mobile (interpreted as Expo Development Builds + TypeScript with native Swift/Kotlin bridges as needed). Platform capability validation remains OPEN.
+- **ADR-012 AFFIRMED; ADR-013 NOT SELECTED:** deploy architecture remains bounded Go microservices + Kubernetes; no modular-monolith-first amendment.
+- **ADR-014 ACCEPTED FOR INITIAL ALPHA ONLY:** begin with local-only alpha; ADR-002 longer-term controlled cloud sync unchanged. Real-data gates not waived.
+- **MVP caregiver-managed profile YES:** on one device, with separate managed profile, not cross-account grants; legal/consent validation before real dependent data.
+- **ADR-017 ACCEPTANCE REAFFIRMED:** one app and account architecture, purpose-based future module contexts; professional modules not in MVP.
+- **ADR-010 REMAINS OPEN:** no server-readable KMS vs E2EE selection, no hosting/provider selection.
+- **Task intent:** update ADR/MASTER/TASKS accordingly, preserve unresolved API and security gates, and **prepare** the first synthetic mobile prototype handoff; no blanket GO to execute previously suspended backend work.
