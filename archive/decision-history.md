@@ -18,3 +18,5 @@ Superseded by: None
 - **2026-10-18 — ADR-019 — PROPOSED:** In-app patient/professional messaging explored in chat; privacy, retention, encryption and clinical release authorization OPEN.
 - **2026-10-18 — FUTURE-001/002/003 — PROPOSED / BACKLOG:** Coach, professional care team and nutrition meal plans are future research hypotheses, explicitly excluded from current MVP data model until interviews and owner GO.
 - **2026-10-19 — PR #21 round 2 review:** R1–R9 document reconciliation requested. Records/statuses above are scoped to evidence, not inferred from prior AI decisions. ADR-005/009/010/013/014 and hosting/brand/pricing remain OPEN or PROPOSED.
+
+- **2026-10-19 — ADR-005 — ACCEPTED (native direction):** Owner explicitly abandoned React Native in chat after evaluating native development. Mobile architecture is Swift/SwiftUI for iOS and Kotlin/Jetpack Compose for Android; first release order and specific libraries remain OPEN. No source code GO implied.
