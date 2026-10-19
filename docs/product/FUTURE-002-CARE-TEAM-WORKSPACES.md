@@ -32,6 +32,9 @@ The proposed dietitian-created weekly menu and client meal tracking experience i
 - Personnel changes and organization exit must revoke staff-level access without dissolving user ownership. Query filters must not permit cross-patient leaks; exports are separately authorized and encrypted where applicable.
 - Special cases: minors, guardianship, emergency/break-glass access, incapacity and shared phones are **explicitly deferred/open**, not implicit permissions.
 
+## Proposed in-app communications
+Future messaging between the member/patient and their coach, dietitian, physician or permitted caregiver should use one **permissioned messaging module**, not separate apps or automatically exposed SMS. See [ADR-019](../decisions/ADR-019-PERMISSIONED-MESSAGING.md). Every thread requires an active, permitted relationship; no shared patient-data permissions are implied by messages. Clinical messages, encrypted retention and exports remain gated.
+
 ## Domain separation
 - `MedicationPlan`: authority under ADR-003 and draft ADR-009, distinct from provider-suggested therapy. Preserve immutable schedule versions and recorded dose events.
 - `ProfessionalRecommendation`: authored suggestion with rationale/source/expiry and recipient-specific approval state; not directly executable against medication schedules.
