@@ -26,7 +26,7 @@ Initial hypotheses: adults managing multiple medicines and regular measurements,
 Medication safety; reliable offline behavior within mobile OS constraints; provenance and user control; accessibility and multilingual UX; no medical diagnosis or automatic dosage advice; no sale of personal health information; no invented outcomes or traction.
 
 ## Current technical direction, not frozen
-React Native + TypeScript on iOS/Android is **PROPOSED ADR-005**. Go microservices + Kubernetes learning-first is **ACCEPTED ADR-012 in principle**. PostgreSQL and OpenAPI 3.1 are the target design; auth, sync encryption, hosting and exact request/response semantics remain OPEN. No deployed app, running CI or production backend is claimed.
+**ACCEPTED ADR-005:** separate native Swift/SwiftUI iOS and Kotlin/Jetpack Compose Android mobile clients; first release order OPEN. Go microservices + Kubernetes learning-first is **ACCEPTED ADR-012 in principle**. PostgreSQL and OpenAPI 3.1 are the target design; auth, sync encryption, hosting and exact request/response semantics remain OPEN. No deployed app, running CI or production backend is claimed.
 
 ## Roadmap hypotheses
 1. Research and synthetic clickable mobile prototype.
