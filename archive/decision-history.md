@@ -27,3 +27,5 @@ Superseded by: None
 - **ADR-017 ACCEPTANCE REAFFIRMED:** one app and account architecture, purpose-based future module contexts; professional modules not in MVP.
 - **ADR-010 REMAINS OPEN:** no server-readable KMS vs E2EE selection, no hosting/provider selection.
 - **Task intent:** update ADR/MASTER/TASKS accordingly, preserve unresolved API and security gates, and **prepare** the first synthetic mobile prototype handoff; no blanket GO to execute previously suspended backend work.
+
+- **2026-10-19 (later the same day) — ADR-005 REVISED / ACCEPTED NATIVE:** Owner explicitly withdrew the earlier React Native/Expo selection recorded in main commit `4d9d20b` and chose native **Swift/SwiftUI for iOS and Kotlin/Jetpack Compose for Android**. The previous RN acceptance above is retained as historical evidence, not current implementation authority. ADR-005 now supersedes it. The first prototype platform (iOS / Android / both) remains OPEN; no agent setup or coding authorization is implied.

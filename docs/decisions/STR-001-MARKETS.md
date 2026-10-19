@@ -1,6 +1,7 @@
 Status: ACCEPTED
 Date: 2026-10-18
 Owner: My Health MASTER
+Owner acceptance: 2026-10-18 — owner initial Türkiye/Azerbaijan market decision, documented in archive/decision-history.md.
 Supersedes: None
 Superseded by: None
 

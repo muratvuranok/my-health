@@ -1,14 +1,11 @@
 Status: ACCEPTED (implementation details OPEN)
 Date: 2026-10-18
 Owner: My Health MASTER
+Owner acceptance: 2026-10-18 (reaffirmed 2026-10-19) — owner chat direction to use small Go microservices and Kubernetes; see archive/decision-history.md.
 Supersedes: None
 Superseded by: None
 
 # ADR-012 — Microservices and Kubernetes learning-first architecture
-Date: 2026-10-18
-Status: ACCEPTED IN PRINCIPLE; implementation details and contract freeze OPEN
-Decision owner: My Health MASTER
-
 ## 2026-10-19 owner reaffirmation
 The owner explicitly chose **ADR-012 microservices + Kubernetes** over ADR-013 modular-monolith-first in the six-decision review. This maintains the long-term deployment architecture; it does **not** require a network backend or Kubernetes cluster for the accepted ADR-014 local-only synthetic mobile prototype. No production deployment, service decomposition count or API contract freeze is implied.
 
@@ -34,7 +31,7 @@ Do not force one Kubernetes Deployment per conceptual module before boundary val
 - No service mesh, Kafka, complex autoscaling or managed cloud Kubernetes in MVP unless demonstrated need.
 
 ## Contract-first guardrails
-External REST/OpenAPI 3.1 and generated React Native TypeScript client. Internal service communication default HTTP/JSON for simplicity; consider gRPC only if measured need. Publish ownership, authentication propagation, service identity, event versioning, idempotency, retry budgets, deadlines, error taxonomy and backwards compatibility rules before code. API gateway is not an authorization substitute; every data-owning service enforces authorization. Avoid shared user tables and distributed joins. Medication schedule and event operations remain strongly consistent within medication boundary.
+External REST/OpenAPI 3.1 and generated native Swift and Kotlin API clients (after OpenAPI contract approval; generator choice OPEN). Internal service communication default HTTP/JSON for simplicity; consider gRPC only if measured need. Publish ownership, authentication propagation, service identity, event versioning, idempotency, retry budgets, deadlines, error taxonomy and backwards compatibility rules before code. API gateway is not an authorization substitute; every data-owning service enforces authorization. Avoid shared user tables and distributed joins. Medication schedule and event operations remain strongly consistent within medication boundary.
 
 ## Mandatory architecture questions
 - Identity vs profile boundary: registration lifecycle, eventual consistency, deletion and re-registration.

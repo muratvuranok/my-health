@@ -8,7 +8,7 @@ Superseded by: None
 # ADR-016 — Integration architecture, authorization and data contracts
 
 ## Decision and scope
-**All external integrations use capability-specific adapters and an explicit registry; no vendor SDK is allowed to directly mutate medication schedules or write cross-service databases.** The integration boundary is logical, not necessarily a new deployed microservice. React Native orchestrates user consent and local platform adapter use. Go services own authorization, data provenance, durable sync, device registry and auditable server side provider connections. The medication service retains authority over schedule rules (ADR-003). This ADR proposes **integration architecture conventions**, NOT blanket health access, a provider partnership, live OAuth credentials, any write permission, or final endpoint field sets.
+**All external integrations use capability-specific adapters and an explicit registry; no vendor SDK is allowed to directly mutate medication schedules or write cross-service databases.** The integration boundary is logical, not necessarily a new deployed microservice. Native iOS Swift/SwiftUI and Android Kotlin/Jetpack Compose clients orchestrate user consent and local platform adapters under accepted ADR-005. Go services own authorization, data provenance, durable sync, device registry and auditable server side provider connections. The medication service retains authority over schedule rules (ADR-003). This ADR proposes **integration architecture conventions**, NOT blanket health access, a provider partnership, live OAuth credentials, any write permission, or final endpoint field sets.
 
 ## Integration registry
 | ID | Capability / provider | Owner | Proposed launch direction | Permission / credential | Direction | Rules |
@@ -40,7 +40,7 @@ These mappings are **implementation candidates; check current official SDK avail
 3. **Server authorization / grants:** Server-derived account, actor, subject/profile and purpose. Explicit future family grants are independent from OS and upload consent. Tokens and capability claims from the device never confer profile ownership.
 
 ## Mobile adapter boundary and contract
-`HealthSourceAdapter` responsibilities: `isAvailable()`; `supportedTypes()`; `requestReadAccess(types[])`; `readIncremental(cursor, type, limit)`; `observeChanges()` where platform allows; `getPermissionUXState()` without claiming invisible HealthKit read grants; `disconnect()` local consent/prefs only. Return normalized typed `HealthSample` and source-specific cursor/deletion markers with adapter version and query window. Native Swift/Kotlin bridge implementations are reviewed separately; avoid coupling business logic to a third-party library API.
+`HealthSourceAdapter` responsibilities: `isAvailable()`; `supportedTypes()`; `requestReadAccess(types[])`; `readIncremental(cursor, type, limit)`; `observeChanges()` where platform allows; `getPermissionUXState()` without claiming invisible HealthKit read grants; `disconnect()` local consent/prefs only. Return normalized typed `HealthSample` and source-specific cursor/deletion markers with adapter version and query window. Native Swift/Kotlin platform adapters are reviewed separately; avoid coupling domain rules to vendor SDK internals.
 
 **Per sample fields (candidate, NOT frozen):**
 `source_system`, `source_record_id`, `source_application`, `source_device_id?`, `source_type`, `type`, `measurement_components[{code,value_decimal,unit_code}]`, `measured_at`, `measured_end_at?`, `received_at`, `offset_minutes?`, `timezone?`, `provenance_metadata?`, `external_version?`, `import_batch_id`, `is_deleted`, `schema_version`.
@@ -71,7 +71,6 @@ At least: permission approve/deny/revoke mid-sync; partial/limited history; no d
 - https://developer.apple.com/documentation/usernotifications/asking-permission-to-use-notifications — context-based notification permission.
 - https://firebase.google.com/docs/cloud-messaging/android/get-started — Android 13+ notification runtime authorization.
 - https://developer.android.com/develop/connectivity/bluetooth/bt-permissions — Android BLE scan/connect permissions.
-- https://docs.expo.dev/workflow/customizing/ — development builds and custom native Swift/Kotlin modules.
 All claims tied to provider policies must be rechecked at implementation/store submission; dated market, legal and per-model support are not decided by this ADR.
 
 ## Change control and open decisions
