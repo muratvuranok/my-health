@@ -9,6 +9,9 @@ Date: 2026-10-18
 Status: ACCEPTED IN PRINCIPLE; implementation details and contract freeze OPEN
 Decision owner: My Health MASTER
 
+## 2026-10-19 owner reaffirmation
+The owner explicitly chose **ADR-012 microservices + Kubernetes** over ADR-013 modular-monolith-first in the six-decision review. This maintains the long-term deployment architecture; it does **not** require a network backend or Kubernetes cluster for the accepted ADR-014 local-only synthetic mobile prototype. No production deployment, service decomposition count or API contract freeze is implied.
+
 ## Decision
 Adopt a deliberately small, independently deployable microservice architecture for My Health, and use Kubernetes as the target orchestration platform. A major goal is hands-on learning transferable to other projects. This supersedes the earlier modular-monolith *deployment topology* recommendation, but retains Go/PostgreSQL, API-first contracts, synthetic-only local development and all safety gates. No automatic production or real-health-data GO.
 

@@ -6,6 +6,9 @@ Superseded by: None
 
 # ADR-010 — Sync architecture and encryption modes
 
+## Owner deferral confirmation — 2026-10-19
+The owner explicitly chose **"Sunucu şifreleme: ADR-010 açık kalsın"**. Neither E2EE nor server-readable/KMS has been selected. ADR-014 local-only alpha sequencing is accepted and therefore avoids premature server encryption choices; **it is not a final encryption decision**. ADR-002 encrypted local storage + controlled future cloud sync continues to apply. Server schema, hosting and full sync API contract remain NOT FROZEN.
+
 ## Decision OPEN (B2, B7, B8)
 **Option A: server-readable application data + encryption at rest/envelope KMS.** Enables server-side validation, conflicts, search, exports and family sharing; imposes breach/insider and jurisdictional risks.
 
