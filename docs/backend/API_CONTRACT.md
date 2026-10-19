@@ -23,8 +23,8 @@ GET/POST /v1/profiles/{profileId}/consents; **Deferred — not in MVP (PROPOSED,
 POST /v1/sync/push {device_id,mutations:[typed mutation oneOf by resource, mutation_id, base_version, payload]} (PROPOSED; schema not frozen); GET /v1/sync/pull?cursor=&limit=. Conflict safety, replay idempotency and monotonic cursors tested.
 
 ## Integration and messaging extensions (DRAFT — NOT FROZEN)
-- Integration capabilities, per-profile source import preferences, typed measurement import batches and disconnect: see [INTEGRATION_API_DRAFT.md](INTEGRATION_API_DRAFT.md) and accepted architectural boundary [ADR-016](../decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md).
-- Notification preferences, push-device registration and optional in-app message center: see [NOTIFICATION_API_DRAFT.md](NOTIFICATION_API_DRAFT.md), accepted design [ADR-015](../decisions/ADR-015-NOTIFICATIONS-MESSAGING.md).
+- Integration capabilities, per-profile source import preferences, typed measurement import batches and disconnect: see [INTEGRATION_API_DRAFT.md](INTEGRATION_API_DRAFT.md) and proposed architectural boundary [ADR-016](../decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md).
+- Notification preferences, push-device registration and optional in-app message center: see [NOTIFICATION_API_DRAFT.md](NOTIFICATION_API_DRAFT.md), proposed design [ADR-015](../decisions/ADR-015-NOTIFICATIONS-MESSAGING.md).
 - No implicit HealthKit/Health Connect grants through the backend; device-local OS grants and server cloud-import consent are distinct. No endpoint schema is frozen.
 
 ## Service
