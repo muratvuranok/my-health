@@ -7,7 +7,7 @@ Superseded by: None
 # ADR-019 — Permissioned in-app messaging across My Health modules
 
 ## Product intent
-One My Health account (accepted ADR-017) can participate in carefully authorized conversations with a dietitian, trainer, physician, patient/client or permitted caregiver. The user can message the relevant professional from within the same app, and professionals can reply from their workspace. This is a **shared platform capability**, not a separate messaging app per persona. Messaging is PROPOSED for a future release and **must not** be treated as existing clinical advice, secure clinician service, emergency triage or production-ready encrypted chat.
+One My Health account (accepted structural ADR-017) can participate in carefully authorized conversations with a dietitian, trainer, physician, patient/client or permitted caregiver. The user can message the relevant professional from within the same app, and professionals can reply from their workspace. This is a **shared platform capability**, not a separate messaging app per persona. Messaging is PROPOSED for a future release and **must not** be treated as existing clinical advice, secure clinician service, emergency triage or production-ready encrypted chat.
 
 ## Examples
 - Dietitian and consenting client discuss a specific week's meal plan, clarifications and check-in; messages may reference `nutrition_plan_version_id` without automatically attaching health data.
@@ -26,12 +26,12 @@ One My Health account (accepted ADR-017) can participate in carefully authorized
 
 ## Messaging domain and delivery architecture
 - **Messaging service** owns conversation membership, messages, ordering and moderation/audit metadata. It does not own medications, nutrition plans, measurements, contact information or clinical orders.
-- **Notification service** (accepted ADR-015) consumes `message.created.v1` delivery intents and sends generic push/email alerts (e.g. "You have a new message"), without message text, health data or names by default. Notification attempts and delivery status are not authoritative message persistence.
+- **Notification service** (proposed ADR-015) consumes `message.created.v1` delivery intents and sends generic push/email alerts (e.g. "You have a new message"), without message text, health data or names by default. Notification attempts and delivery status are not authoritative message persistence.
 - Use server-assigned per-conversation monotonically increasing `sequence_number`; `client_message_id` for idempotency/retry; persistent `message_id` and `created_at`. Device clocks never determine canonical order.
 - Real-time path: authenticated WebSocket **or** event stream, plus HTTP APIs for history/send/read; choice OPEN until OS/mobile/K8s load and reconnection tests. Offline delivery uses pagination/cursors and retry; presence/typing indicators deferred.
 - Data must be encrypted in transit and under the selected approved rest/E2EE design. **ADR-010 E2EE/server-readable remains OPEN**: full-text search, attachments, multi-device key recovery, abuse reporting, moderation, exports and legal record retention depend on that decision.
 - No PHI in queue topic names, tracing spans, metrics labels, analytics, push payloads, logs or raw exception text. Use opaque message/conversation references and minimum metadata.
-- Attachments (photos, PDFs, clinical records) are **DEFERRED** pending file security, signed URL/TLL, antivirus, MIME verification, quotas, storage residency, encryption, permission and data-retention decisions. No arbitrary third-party URLs or access-token sharing.
+- Attachments (photos, PDFs, clinical records) are **DEFERRED** pending file security, signed URL/TTL, antivirus, MIME verification, quotas, storage residency, encryption, permission and data-retention decisions. No arbitrary third-party URLs or access-token sharing.
 - Message edit/delete semantics must preserve audit/history appropriate to context; a user cannot secretly mutate a clinician's record or medication event.
 
 ## Contextual UI and scope
