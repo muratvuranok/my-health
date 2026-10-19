@@ -14,6 +14,7 @@ Several medications, changing schedules, measurements and caregiving responsibil
 ## Planned capabilities
 - Medication plans, reminders, logged actions, skipped doses and auditable plan history; safe timezone and offline handling.
 - Health measurements with units, times, source and provenance; optional HealthKit / Health Connect permissions.
+- **Planned post-foundation activity history:** detailed walks, runs and other workouts inside the phone app, including available duration, distance, pace, heart rate and source details; optional **GPS route map** when the source provides it and location-specific permission is granted. No invented coordinates or automatic tracking.
 - Caregiver-friendly managed profiles and, after authorization/security review, future account-to-account sharing.
 - Accessible daily timeline and patient-controlled export for clinician discussion, not diagnosis.
 - Privacy-first local security, explicit consent and controlled cross-device recovery/sync once architecture is approved.
