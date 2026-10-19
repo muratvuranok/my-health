@@ -9,7 +9,7 @@ Superseded by: None
 Repository: muratvuranok/my-health. **Temporarily PUBLIC** to permit external AI tools to read documentation; the owner intends to make it private after review. Public visibility is NOT permission to publish sensitive health data, secrets or private conversation content. Product brand remains a working name.
 
 ## Scope and authority
-MASTER owns product strategy, accepted decisions, priorities, governance and release gates. Lili AI and Claude are implementation/review participants within explicit scoped tasks only. The My Health repository is not the Lili AI platform repository. No production deployment, live health records, secrets, autonomous clinical dosing advice or public health claims without explicit MASTER GO.
+MASTER owns product strategy, accepted decisions, priorities, governance and release gates. Lili AI and Claude are implementation/review participants within explicit scoped tasks only. The My Health repository is not the Lili AI platform repository. **Agent infrastructure, orchestration and execution belong to a separate project; this repository establishes product foundations, platform architecture and contracts only.** No production deployment, live health records, secrets, autonomous clinical dosing advice or public health claims without explicit MASTER GO.
 
 ## Document authority order
 1. **MASTER** — owner-approved governance and decision status.
@@ -25,7 +25,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-002 ACCEPTED:** encrypted local data plus controlled cloud sync as architectural intent; encryption/key model OPEN.
 - **ADR-003 ACCEPTED:** My Health authoritative verified medication schedule; imports cannot silently overwrite it.
 - **ADR-004 ACCEPTED:** private TestFlight before public release, gated for real data.
-- **ADR-005 ACCEPTED (2026-10-19 owner mobile decision):** Native iOS Swift/SwiftUI and Android Kotlin/Jetpack Compose; React Native/Expo rejected. **Mobile Lead Agent issues one approved feature specification to parallel iOS and Android Agents; lead reviews tests and validates both platforms together.** First release platform order OPEN; no implementation GO.
+- **ADR-005 ACCEPTED (2026-10-19 owner mobile decision):** Native iOS Swift/SwiftUI and Android Kotlin/Jetpack Compose; React Native/Expo rejected. The owner described a future Mobile Lead + parallel iOS/Android agent workflow managed in a separate project; My Health does not build or run that agent system. First release platform order OPEN; no implementation GO.
 - **ADR-007 ACCEPTED (conventions only):** contract-first OpenAPI 3.1, snake_case, errors/compatibility; endpoint schemas and contract freeze remain OPEN.
 - **ADR-015 PROPOSED (no owner acceptance recorded):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
 - **ADR-016 PROPOSED (no owner acceptance recorded):** per-platform adapters, minimal per-type data access, separated OS/user/server authorization and provenance; integration API draft NOT FROZEN.
@@ -68,7 +68,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/decisions/ADR-001-004.md`](docs/decisions/ADR-001-004.md) | ACCEPTED owner decisions |
 | [`docs/decisions/STR-001-MARKETS.md`](docs/decisions/STR-001-MARKETS.md) | ACCEPTED market decision |
 | [`docs/decisions/ADR-005-MOBILE-PLATFORM.md`](docs/decisions/ADR-005-MOBILE-PLATFORM.md) | ACCEPTED native iOS + Android; lead + parallel agents; release order OPEN |
-| [`docs/mobile/NATIVE_AGENT_DELIVERY_PROTOCOL.md`](docs/mobile/NATIVE_AGENT_DELIVERY_PROTOCOL.md) | ACCEPTED agent workflow only; new implementation GO required |
+| [`docs/mobile/NATIVE_AGENT_DELIVERY_PROTOCOL.md`](docs/mobile/NATIVE_AGENT_DELIVERY_PROTOCOL.md) | DRAFT external workflow context, not an implementation task |
 | [`docs/decisions/ADR-007-API-CONVENTIONS.md`](docs/decisions/ADR-007-API-CONVENTIONS.md) | ACCEPTED conventions; payloads not frozen |
 | [`docs/decisions/ADR-009-MEDICATION-DOMAIN.md`](docs/decisions/ADR-009-MEDICATION-DOMAIN.md) | DRAFT / OPEN |
 | [`docs/decisions/ADR-010-SYNC-ENCRYPTION.md`](docs/decisions/ADR-010-SYNC-ENCRYPTION.md) | DRAFT / OPEN |
