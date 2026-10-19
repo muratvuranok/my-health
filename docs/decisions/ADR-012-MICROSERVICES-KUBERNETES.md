@@ -31,7 +31,7 @@ Do not force one Kubernetes Deployment per conceptual module before boundary val
 - No service mesh, Kafka, complex autoscaling or managed cloud Kubernetes in MVP unless demonstrated need.
 
 ## Contract-first guardrails
-External REST/OpenAPI 3.1 and generated React Native TypeScript client. Internal service communication default HTTP/JSON for simplicity; consider gRPC only if measured need. Publish ownership, authentication propagation, service identity, event versioning, idempotency, retry budgets, deadlines, error taxonomy and backwards compatibility rules before code. API gateway is not an authorization substitute; every data-owning service enforces authorization. Avoid shared user tables and distributed joins. Medication schedule and event operations remain strongly consistent within medication boundary.
+External REST/OpenAPI 3.1 and generated native Swift and Kotlin clients (subject to tool compatibility and contract freeze). Internal service communication default HTTP/JSON for simplicity; consider gRPC only if measured need. Publish ownership, authentication propagation, service identity, event versioning, idempotency, retry budgets, deadlines, error taxonomy and backwards compatibility rules before code. API gateway is not an authorization substitute; every data-owning service enforces authorization. Avoid shared user tables and distributed joins. Medication schedule and event operations remain strongly consistent within medication boundary.
 
 ## Mandatory architecture questions
 - Identity vs profile boundary: registration lifecycle, eventual consistency, deletion and re-registration.
