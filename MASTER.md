@@ -26,18 +26,18 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-003 ACCEPTED:** My Health authoritative verified medication schedule; imports cannot silently overwrite it.
 - **ADR-004 ACCEPTED:** private TestFlight before public release, gated for real data.
 - **ADR-007 ACCEPTED (conventions only):** contract-first OpenAPI 3.1, snake_case, errors/compatibility; endpoint schemas and contract freeze remain OPEN.
-- **ADR-015 PROPOSED (no owner acceptance recorded):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
-- **ADR-016 PROPOSED (no owner acceptance recorded):** per-platform adapters, minimal per-type data access, separated OS/user/server authorization and provenance; integration API draft NOT FROZEN.
 - **ADR-017 ACCEPTED (reaffirmed by owner 2026-10-19; single-product account/workspace structure):** One My Health identity and application; user chooses intended purpose at onboarding; module visibility and workspace contexts vary by eligibility, but workspace admin roles never confer patient-data access. Professional modules remain PROPOSED and gated; acceptance of a shared account does not add workspace schema to MVP.
 - **ADR-012 ACCEPTED IN PRINCIPLE:** bounded microservices and Kubernetes learning-first target. **ADR-013 is only PROPOSED**; no reversion to monolith approved.
 - **IOT-001 / MH-IOT-01:** one unified post-MVP connected-device initiative (tracking alias, not a second decision).
 
-## Open decisions / proposals
 - **ADR-005 ACCEPTED:** Owner confirmed React Native + Expo on 2026-10-19; Development Builds with TypeScript and native adapters where necessary. Device verification remains OPEN.
+- **ADR-014 ACCEPTED (initial alpha only):** Owner selected local-only initial alpha 2026-10-19. ADR-002 future cloud-sync intent remains intact; ADR-010 OPEN.
+## Open decisions / proposals
+- **ADR-015 PROPOSED (no owner acceptance recorded):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
+- **ADR-016 PROPOSED (no owner acceptance recorded):** per-platform adapters, minimal per-type data access, separated OS/user/server authorization and provenance; integration API draft NOT FROZEN.
+- **ADR-013 NOT SELECTED:** Owner reaffirmed ADR-012 microservices + Kubernetes on 2026-10-19. ADR-013 is historical alternative.
 - **ADR-009 DRAFT/OPEN:** medication temporal domain including PRN, DST, travel, tapering, history.
 - **ADR-010 DRAFT/OPEN:** server-readable vs E2EE vs local-only alpha option, sync/conflict protocol and recovery; ADR-002 remains accepted.
-- **ADR-013 NOT SELECTED:** Owner reaffirmed ADR-012 microservices + Kubernetes on 2026-10-19. ADR-013 is historical alternative.
-- **ADR-014 ACCEPTED (initial alpha only):** Owner selected local-only initial alpha 2026-10-19. ADR-002 future cloud-sync intent remains intact; ADR-010 OPEN.
 - **ADR-019 PROPOSED:** permissioned in-app messages between clients and dietitians, coaches, physicians or authorized caregivers. This is separate from accepted ADR-015 outbound email/push delivery. Encryption/clinical record retention remain OPEN.
 - **ADR-018 PROPOSED:** optional purchasable modules and subscription entitlement models; core medication safety not paywalled, commercial pricing and provider OPEN. One account and modular contexts remain accepted under ADR-017.
 - **ADR-006/008/011 NOT YET WRITTEN:** tech stack versions, auth state machine, consent/grants/retention. ADR-007 conventions are accepted but field-level OpenAPI is NOT approved. No implicit choice.
