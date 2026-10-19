@@ -21,6 +21,12 @@ ios/Pods/
 *.pem
 *.key
 *.p12
+*.p8
+*.jks
+*.keystore
+*.cer
+google-services.json
+GoogleService-Info.plist
 *.mobileprovision
 *.sqlite
 *.db
