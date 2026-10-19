@@ -25,6 +25,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-002 ACCEPTED:** encrypted local data plus controlled cloud sync as architectural intent; encryption/key model OPEN.
 - **ADR-003 ACCEPTED:** My Health authoritative verified medication schedule; imports cannot silently overwrite it.
 - **ADR-004 ACCEPTED:** private TestFlight before public release, gated for real data.
+- **ADR-005 ACCEPTED (2026-10-19 owner mobile decision):** Native iOS Swift/SwiftUI and Android Kotlin/Jetpack Compose; React Native/Expo rejected. First release platform order OPEN; no implementation GO.
 - **ADR-007 ACCEPTED (conventions only):** contract-first OpenAPI 3.1, snake_case, errors/compatibility; endpoint schemas and contract freeze remain OPEN.
 - **ADR-015 PROPOSED (no owner acceptance recorded):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
 - **ADR-016 PROPOSED (no owner acceptance recorded):** per-platform adapters, minimal per-type data access, separated OS/user/server authorization and provenance; integration API draft NOT FROZEN.
@@ -33,7 +34,6 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **IOT-001 / MH-IOT-01:** one unified post-MVP connected-device initiative (tracking alias, not a second decision).
 
 ## Open decisions / proposals
-- **ADR-005 PROPOSED:** React Native/TypeScript + Expo development builds vs SwiftUI/Flutter alternatives; no final platform implementation GO.
 - **ADR-009 DRAFT/OPEN:** medication temporal domain including PRN, DST, travel, tapering, history.
 - **ADR-010 DRAFT/OPEN:** server-readable vs E2EE vs local-only alpha option, sync/conflict protocol and recovery; ADR-002 remains accepted.
 - **ADR-013 PROPOSED:** modular-monolith-first deployment amendment to ADR-012 (NOT accepted).
@@ -67,7 +67,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/architecture/ARCHITECTURE_AUDIT_V1.md`](docs/architecture/ARCHITECTURE_AUDIT_V1.md) | DRAFT review; contract-freeze hold |
 | [`docs/decisions/ADR-001-004.md`](docs/decisions/ADR-001-004.md) | ACCEPTED owner decisions |
 | [`docs/decisions/STR-001-MARKETS.md`](docs/decisions/STR-001-MARKETS.md) | ACCEPTED market decision |
-| [`docs/decisions/ADR-005-MOBILE-PLATFORM.md`](docs/decisions/ADR-005-MOBILE-PLATFORM.md) | PROPOSED |
+| [`docs/decisions/ADR-005-MOBILE-PLATFORM.md`](docs/decisions/ADR-005-MOBILE-PLATFORM.md) | ACCEPTED native iOS + Android; release order OPEN |
 | [`docs/decisions/ADR-007-API-CONVENTIONS.md`](docs/decisions/ADR-007-API-CONVENTIONS.md) | ACCEPTED conventions; payloads not frozen |
 | [`docs/decisions/ADR-009-MEDICATION-DOMAIN.md`](docs/decisions/ADR-009-MEDICATION-DOMAIN.md) | DRAFT / OPEN |
 | [`docs/decisions/ADR-010-SYNC-ENCRYPTION.md`](docs/decisions/ADR-010-SYNC-ENCRYPTION.md) | DRAFT / OPEN |
