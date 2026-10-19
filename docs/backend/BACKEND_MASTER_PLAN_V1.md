@@ -1,3 +1,11 @@
+Status: SUPERSEDED (topology); implementation ON HOLD
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: ADR-012; docs/architecture/ARCHITECTURE_AUDIT_V1.md
+
+**DO NOT EXECUTE.** Historical local synthetic-data plan, not an active development authorization. References to docs/backend/DATA_MODEL.md and docs/security/THREAT_MODEL.md were TODO/not yet written at review time; new skeletons must be completed before implementation. Historical `/documents` and `/devices` routes are NOT current MVP approval; see [API_CONTRACT.md](API_CONTRACT.md) for current deferrals.
+
 # MH-BE-001 — END-TO-END BACKEND MASTER PLAN v1.0
 Date: 2026-10-18. Status: IMPLEMENTATION AUTHORIZED FOR LOCAL SYNTHETIC DATA ONLY. Owner: My Health MASTER. Implementer: Claude via Lili AI orchestration. Source: My Health repo only.
 
@@ -21,7 +29,7 @@ Sessions: short-lived access JWT or opaque token (document tradeoff; prefer shor
 Do not implement custom crypto or trust client-supplied role/user_id.
 
 ## API groups
-/v1/health/live and /ready; /v1/auth/*; /v1/me, /v1/me/sessions, /v1/me/export, /v1/me/delete; /v1/profiles and /{id}; /v1/profiles/{id}/medications/plans and /{planId}; /v1/profiles/{id}/medications/plans/{planId}/events; /v1/profiles/{id}/measurements; /v1/profiles/{id}/documents (metadata only); /v1/profiles/{id}/consents; /v1/sync/push, /v1/sync/pull; /v1/devices (capability placeholder, not external hardware integration). Implement and document endpoints, request/response, pagination, validation, authorization, idempotency, errors and OpenAPI examples. No speculative diagnosis/treatment endpoint.
+/v1/health/live and /ready; /v1/auth/*; /v1/me, /v1/me/sessions, /v1/me/export, DELETE /v1/me; /v1/profiles and /{id}; /v1/profiles/{id}/medications/plans and /{planId}; /v1/profiles/{id}/medications/plans/{planId}/events; /v1/profiles/{id}/measurements; /v1/profiles/{id}/documents (metadata only); /v1/profiles/{id}/consents; /v1/sync/push, /v1/sync/pull; /v1/devices (capability placeholder, not external hardware integration). Implement and document endpoints, request/response, pagination, validation, authorization, idempotency, errors and OpenAPI examples. No speculative diagnosis/treatment endpoint.
 
 ## Safety and domain rules
 My Health verified medication plan is authoritative; HealthKit or device data must not silently change dose or schedule. Timezone/DST recurrence must be deterministic; dedupe occurrence IDs; audit schedule edits; no dosing recommendations. Preserve measurement source/provenance and units; avoid automatic cross-unit clinical inference. Explicit consent and export/delete lifecycle. Secure default: profile grants disabled until reviewed. Data deletion must handle derived caches and jobs.

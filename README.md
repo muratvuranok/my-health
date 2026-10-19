@@ -1,20 +1,9 @@
 # My Health
 
-Bu depo **My Health** projesinin çalışma alanıdır.
+Bu depo My Health projesinin çalışma alanıdır. **Claude ve Gemini için başlangıç dosyası [MASTER.md](MASTER.md)**; dokümanların otorite sırası ve güncel karar durumları orada açıklanır.
 
-## Claude ve Gemini için
+Vizyon, ürün kapsamı, mimari, kararlar ve teknik taslaklar repo içindeki ilgili dosyalardadır. README bir ürün tanıtımı veya uygulama yetkilendirmesi değildir. [Ürün dokümanları](docs/product/), [mimari](docs/architecture/), [kararlar](docs/decisions/), [backend taslakları](docs/backend/), [testler](docs/testing/), [inceleme raporu](docs/reviews/REVIEW-2026-10-18.md) ve [görev indeksi](TASKS.md) okunmalıdır.
 
-Projenin amacı, vizyonu, kapsamı, teknik kararları, mimarisi, görevleri ve uygulama talimatları bu depodaki dokümanlarda bulunmaktadır. **README bir ürün tanıtımı veya teknik şartname değildir.** Değerlendirme ya da geliştirmeye başlamadan önce ilgili dosyaları doğrudan okuyun; yalnızca README'ye dayanarak karar vermeyin.
+**Önemli:** [Eski backend yürütme talimatı](handoff/CLAUDE_BACKEND_EXECUTION.md) **SUSPENDED** durumundadır. Kabul edilmiş kararlar ve henüz öneri olanlar MASTER'da ayrılmıştır. Güncel yetki olmadan geliştirmeye başlamayın.
 
-Başlangıç noktaları:
-- [MASTER.md](MASTER.md) — proje yönetimi ve kararlar
-- [docs/product/](docs/product/) — ürün vizyonu ve kapsam
-- [docs/architecture/](docs/architecture/) — mimari ve denetimler
-- [docs/decisions/](docs/decisions/) — mimari ve stratejik karar kayıtları
-- [docs/backend/](docs/backend/) — API ve backend taslakları
-- [docs/testing/](docs/testing/) — test ve kabul kriterleri
-- [handoff/](handoff/) — uygulama/ajan görev talimatları
-
-**Önemli:** Bazı eski dokümanlar güncel kararlarla çelişebilir. Özellikle [mimari denetimi](docs/architecture/ARCHITECTURE_AUDIT_V1.md) ve [mikroservis/Kubernetes kararını](docs/decisions/ADR-012-MICROSERVICES-KUBERNETES.md) dikkate alın. Çelişkili veya henüz onaylanmamış noktaları kesin karar olarak yorumlamayın; yetki verilmeden uygulama başlatmayın.
-
-Depo, dış araçların dosyaları okuyabilmesi için **geçici olarak public** durumdadır. Daha sonra yeniden private yapılması planlanmaktadır. Bu erişim durumu, içeriklerin serbest kullanım veya paylaşım izni olduğu anlamına gelmez.
+Depo dış araçların incelemesi için geçici olarak public; sonrasında yeniden private yapılması planlanıyor. Public erişim, sağlık verisi/secrets yükleme veya içeriği serbestçe yeniden kullanma izni vermez.

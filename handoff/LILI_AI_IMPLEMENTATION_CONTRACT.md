@@ -1,10 +1,16 @@
+Status: DRAFT
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
 # Lili AI → My Health implementation contract
 
 ## Role
 Lili AI is the coding/test/review orchestrator for the independent My Health product. It is not the health-data owner, medical authority or autonomous release manager.
 
-## First assignment: MH-001 + MH-002
-Read MASTER.md, ROADMAP.md, MVP_SCOPE.md, SECURITY.md, architecture and release gates. Prepare implementation plan for SwiftUI tr/az/en shell and synthetic-data interactive prototype. Do not implement beyond the explicitly approved task scope.
+## Historical first assignment: MH-001 + MH-002 (planning only; execution requires a current task in TASKS.md)
+Read MASTER.md v1.3, docs/decisions/ADR-012-MICROSERVICES-KUBERNETES.md, docs/architecture/ARCHITECTURE_AUDIT_V1.md, docs/decisions/ADR-005-MOBILE-PLATFORM.md, ROADMAP.md, docs/product/MVP_SCOPE.md, SECURITY.md, architecture and release gates. Prepare a mobile shell (platform per ADR-005) and synthetic-data interactive prototype plan. ADR-005 is PROPOSED, not owner-approved; do not infer an implementation GO. Do not implement beyond the explicitly approved task scope.
 
 ## Execution boundaries
 - One feature branch/PR per task; never push directly to main without authorized workflow.

@@ -1,0 +1,69 @@
+Status: DRAFT — integration endpoint and data schemas NOT FROZEN
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
+# Integration API contract — design proposal
+
+## Scope and protocol
+Only public My Health APIs for a signed-in user's device-originating health data and integration preferences. Direct OS HealthKit/Health Connect grants cannot be requested by the backend; mobile native adapters obtain them from OS. No server-based OAuth connection for HealthKit or Health Connect. This is a **candidate endpoint list and bodies**, not approved executable OpenAPI; wire convention ADR-007, architecture ADR-016.
+
+## Suggested resources
+- `integration_source`: per installation and OS adapter, not a globally linked account.
+- `import_policy`: what source/types a user opted to import to which authorized profile and whether cloud upload is enabled.
+- `import_batch`: source cursor and bounded measurement ingestion idempotency.
+- `import_result`: server-confirmed accepted/duplicate/rejected/conflict counts and typed item outcomes.
+- `integration_connection`: later OAuth/device partner connectors; NOT used to pretend platform HealthKit grants.
+
+All `source_system` enums: `apple_healthkit`, `android_health_connect`, `manual`, future vendor-specific additions. No provider plaintext OAuth/access token in any response. `profile_id` is never authorization.
+
+## GET /v1/me/integration-capabilities
+200 example:
+```json
+{"data":{"sources":[{"source_system":"apple_healthkit","connection_model":"device_permission","data_types":["blood_pressure","heart_rate","weight","body_temperature","oxygen_saturation"],"write_supported":false,"requires_os_permission":true},{"source_system":"android_health_connect","connection_model":"device_permission","data_types":["blood_pressure","heart_rate","weight","body_temperature","oxygen_saturation"],"write_supported":false,"requires_os_permission":true}]},"request_id":"req_example"}
+```
+Capabilities are app/server supported types, **not** proof that any OS grant is available or that user's handset supports either platform. Native adapter must intersect actual capabilities.
+
+## PUT /v1/profiles/{profile_id}/integration-policies/{policy_id}
+**Identity (proposed):** each policy has one opaque `policy_id`, unique per `(profile_id, source_system, installation_id)`; create via `POST /v1/profiles/{profile_id}/integration-policies` and update by `PUT .../{policy_id}`. The create request MUST provide `source_system` and `installation_id`. The update requires an owned `policy_id` and uses `If-Match`; final create/update method and collision handling remain OPEN until OpenAPI freeze.
+```json
+{"source_system":"apple_healthkit","installation_id":"opaque_installation_id","enabled_types":["weight","heart_rate"],"sync_to_cloud":false,"import_from":"2026-10-01T00:00:00Z","retention_choice":"until_disconnected","purpose":"personal_health_tracking"}
+```
+200/201 example:
+```json
+{"data":{"policy_id":"policy_uuid","installation_id":"opaque_installation_id","version":2,"source_system":"apple_healthkit","enabled_types":["weight","heart_rate"],"sync_to_cloud":false,"state":"enabled","updated_at":"2026-10-18T10:00:00Z"},"request_id":"req_example"}
+```
+**OPEN**: whether `sync_to_cloud=false` policy belongs locally only (avoids sending unnecessary consent metadata to server), retention choices, permissions for managed profiles, semantics under E2EE/local-only ADRs. Do not assume device permission from this write.
+
+## POST /v1/profiles/{profile_id}/measurement-imports
+Headers: `Idempotency-Key: <opaque UUID>`.
+```json
+{"source_system":"android_health_connect","installation_id":"opaque_installation_id","batch_id":"uuid","schema_version":1,"items":[{"client_mutation_id":"uuid","source_record_id":"opaque-native-sample-id","source_type":"weight","record":{"type":"weight","measured_at":"2026-10-18T09:30:00Z","components":[{"code":"body_weight","value_decimal":"70.50","unit_code":"kg"}],"provenance":{"source_application":"com.example.sensordata"}}}]}
+```
+202 candidate:
+```json
+{"data":{"batch_id":"uuid","status":"queued","operation_id":"uuid"},"request_id":"req_example"}
+```
+A **202 queued** response must not claim counts of inserted records; use the operation resource for finalized per-item results. Alternative synchronous 200 with finalized per-item results remains OPEN. Batch atomicity and partial successes must be decided under ADR-010/ADR-007. Maximum batch size, decimal precision, source identity and replay retention OPEN; this is NOT a frozen contract.
+
+## GET /v1/profiles/{profile_id}/measurement-imports/{batch_id}
+200 draft:
+```json
+{"data":{"batch_id":"uuid","status":"completed","summary":{"inserted":1,"duplicates":0,"rejected":0},"results":[{"client_mutation_id":"uuid","status":"inserted","measurement_id":"uuid"}]},"request_id":"req_example"}
+```
+No unbounded result lists; pagination or bounded batches needed. Results must not leak another account's source identifiers.
+
+## POST /v1/profiles/{profile_id}/integration-policies/{policy_id}/disconnect
+Request proposed `{"stop_future_imports":true,"delete_imported_copies":false}`.
+202 proposed with `operation_id`; request must not claim it revoked HealthKit/Health Connect OS grants. Return UX guidance to OS settings, and domain-owner workflow for erasure if requested. Define cancellation of in-flight imports, tombstones, backup retention and legal exceptions.
+
+## Normalized measurement semantics
+Use exact decimal strings with unit codes; BP separate systolic/diastolic and provenance, no auto-merge with manual records. `measured_at`, `received_at`, `source_record_id`, `source_application`, `source_type`, `device_id?`, `is_deleted` for source deletion, and `adapter_schema_version`. Scope idempotency and dedup by profile+source+application+source ID. Sensitive source IDs hashed or encrypted where appropriate. Validate value formats but do not diagnose or make medication recommendations.
+
+## Error taxonomy (candidate)
+All error responses follow ADR-007: `{"error":{"code":"integration_unsupported","request_id":"req_example","fields":[]}}` (machine codes lowercase snake_case). Successes use `{"data":...,"request_id":...}` except HTTP 204.
+`integration_unsupported`, `integration_not_configured`, `permission_required` (device-side only; cannot infer HealthKit read denial from server), `data_type_unsupported`, `import_cursor_expired` (device-side), `consent_required`, `profile_not_owned` (externally mask as 404), `import_conflict`, `import_partial_failure`, `source_rate_limited`, `source_unavailable`, `source_revoked`, `source_version_unsupported`. Each code must have explicit mapped HTTP status and safe client-localized message before freeze.
+
+## Review gates
+Real-device permission and entitlement proofs; backend authorized profile checks; deleted and edited source records; cross-OS unit mapping; batch replay; source cursor loss; mid-batch permission revoked; deletion/disconnect and backup; event propagation; health-data-free logs; schema examples and generated client compile; migration and contract diff. **OpenAPI 3.1 and approval are still required.**

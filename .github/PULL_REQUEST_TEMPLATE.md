@@ -1,3 +1,9 @@
+Status: DRAFT — PR template
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: None
+
 ## Task ID and purpose
 
 ## Scope / out of scope

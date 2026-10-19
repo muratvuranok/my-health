@@ -1,5 +1,15 @@
+Status: SUSPENDED
+Date: 2026-10-18
+Owner: My Health MASTER
+Supersedes: None
+Superseded by: ADR-012 (topology); docs/architecture/ARCHITECTURE_AUDIT_V1.md (contract freeze hold)
+
+**DO NOT EXECUTE.** The former GO to implement the full API without stopping is REVOKED for this obsolete single-binary order. Read MASTER.md, ADR-012, ADR-005 and ARCHITECTURE_AUDIT_V1.md before any new task. The original text below is preserved for historical reference only.
+
+---
+
 # CLAUDE CODE — MY HEALTH BACKEND END-TO-END EXECUTION ORDER
-Repository: muratvuranok/my-health (private)
+Repository: muratvuranok/my-health (temporarily public)
 Task: MH-BE-001
 Read first, in order: MASTER.md, SECURITY.md, docs/product/MVP_SCOPE.md, docs/architecture/SYSTEM_ARCHITECTURE.md, docs/backend/BACKEND_MASTER_PLAN_V1.md, docs/backend/AUTH_DESIGN.md, docs/backend/API_CONTRACT.md, docs/backend/LOCAL_ACCEPTANCE.md, docs/testing/RELEASE_GATES.md.
 
