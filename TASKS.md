@@ -12,7 +12,7 @@ This is the single task-priority index; GitHub Issues/PRs contain details and ev
 
 **No new prototype or implementation task may begin until these owner decisions are explicitly recorded.** These are choices to be made, not implicit approvals, and they do not authorize use of real health data.
 
-1. **ADR-005 mobile platform:** ACCEPT / REJECT the React Native + TypeScript cross-platform proposal.
+1. **ADR-005 mobile platform:** RESOLVED — owner rejected React Native, accepted native Swift/SwiftUI iOS and Kotlin/Jetpack Compose Android on 2026-10-19. First prototype/release platform order remains OPEN.
 2. **ADR-013 modular-monolith-first deployment amendment:** ACCEPT / REJECT. Accepted ADR-012 microservices/Kubernetes remains effective until an explicit change.
 3. **ADR-014 local-only alpha:** ACCEPT / REJECT. Accepted ADR-002 cloud-sync architectural intent remains unchanged unless amended.
 4. **E3 caregiver-managed profile in MVP:** YES / NO; reconcile with ADR-001 individual-first and separately controlled future grants.
@@ -30,7 +30,7 @@ Additional pending owner approvals: **ADR-015 notification architecture**, **ADR
 | MH-FUTURE-003 Dietitian-created weekly meal plan and member logging | PROPOSED / BACKLOG | docs/product/FUTURE-003-NUTRITION-MEAL-PLANS.md | Consent, versioned API and legal review before development |
 | MH-FUTURE-002 Patient-controlled care team (dietitian/trainer/physician) | PROPOSED / BACKLOG | docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md | Medical/legal review and explicit owner GO |
 | MH-FUTURE-001 Coach workspace and consented member tracking | PROPOSED / BACKLOG | docs/product/FUTURE-001-COACH-WORKSPACE.md | Separate owner GO and privacy/authorization ADR required |
-| MH-ADR-005 Cross-platform decision | PROPOSED | ADR-005 | Owner acceptance |
+| MH-ADR-005 Native iOS/Android platform | ACCEPTED (owner chat 2026-10-19) | ADR-005 | Platform order, OS matrix and real-device safety validation OPEN |
 | MH-ADR-016 Integration permission matrix and typed contracts | PROPOSED ARCHITECTURE / API DRAFT | ADR-016, INTEGRATION_API_DRAFT.md | Real device and privacy validation OPEN |
 | MH-ADR-015 Notification, email and push | ARCHITECTURE ACCEPTED / API DRAFT | ADR-015, NOTIFICATION_API_DRAFT.md | Provider selection and real delivery OPEN |
 | MH-ADR-007 API conventions | CONVENTIONS ACCEPTED (owner chat) / SCHEMAS OPEN | ADR-007 | OpenAPI contract freeze NOT granted |
