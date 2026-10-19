@@ -46,3 +46,6 @@ Local synthetic end-to-end from domain outbox to Mailpit/mock APNs/FCM; determin
 
 ## Alternatives and reversal
 Direct in-request provider calls rejected due to latency and retry/data-consistency risk. Push-only medication reminders rejected for unreliable connectivity/timing. Managed broker vs PostgreSQL outbox and broker technology remain OPEN. Reversal becomes costly once device registrations, delivery logs and templates are deployed; revisit with actual operations evidence.
+
+## Scope clarification: future two-way messaging
+This accepted ADR defines **outbound notifications, push and email delivery**, not stored two-way user conversations. [ADR-019](ADR-019-PERMISSIONED-MESSAGING.md) is a **PROPOSED** shared in-app messaging service with its own participant authorization, message persistence, encryption, retention and clinical communication questions. A message-created event may trigger generic alerts under ADR-015; push provider acknowledgment is not proof the message was read.
