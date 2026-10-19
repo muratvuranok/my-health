@@ -4,7 +4,7 @@ Owner: My Health MASTER
 Supersedes: None
 Superseded by: ADR-012; docs/architecture/ARCHITECTURE_AUDIT_V1.md
 
-**DO NOT EXECUTE.** Historical local synthetic-data plan, not an active development authorization. References to docs/backend/DATA_MODEL.md and docs/security/THREAT_MODEL.md were TODO/not yet written at review time; new skeletons must be completed before implementation.
+**DO NOT EXECUTE.** Historical local synthetic-data plan, not an active development authorization. References to docs/backend/DATA_MODEL.md and docs/security/THREAT_MODEL.md were TODO/not yet written at review time; new skeletons must be completed before implementation. Historical `/documents` and `/devices` routes are NOT current MVP approval; see [API_CONTRACT.md](API_CONTRACT.md) for current deferrals.
 
 # MH-BE-001 — END-TO-END BACKEND MASTER PLAN v1.0
 Date: 2026-10-18. Status: IMPLEMENTATION AUTHORIZED FOR LOCAL SYNTHETIC DATA ONLY. Owner: My Health MASTER. Implementer: Claude via Lili AI orchestration. Source: My Health repo only.
