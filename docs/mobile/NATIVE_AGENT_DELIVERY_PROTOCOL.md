@@ -1,23 +1,26 @@
-Status: ACCEPTED — agent delivery workflow only; implementation requires separate task GO
+Status: DRAFT — external delivery model context; NOT a My Health agent-system implementation task
 Date: 2026-10-19
 Owner: My Health MASTER
-Owner acceptance: 2026-10-19 — owner chat explicitly selected one Mobile Lead agent coordinating independent iOS and Android agents working from the same specification, finishing and testing both platforms.
+Owner context: 2026-10-19 — owner described an anticipated workflow executed in a separate project. This is background context, not authorization to create, configure, orchestrate or execute agents in the My Health repository.
 Supersedes: None
 Superseded by: None
 
-# Native Mobile Agent Delivery Protocol
+# External Native Mobile Delivery Context (informational)
 
-## Operating model
+## Boundary: separate execution project
+The agent orchestration system belongs to a **separate project**. My Health only defines its own native iOS/Android architecture, API/domain contracts and acceptance expectations. **Do not build an agent framework, agent registry, dispatcher, worker infrastructure, automation, integration or cross-repository orchestration here. Do not start agents or coding from this document.** The process below is illustrative input for a future external implementer, not an active execution protocol.
+
+## Anticipated operating model (outside My Health)
 One **Mobile Lead Agent** owns planning, scope and cross-platform acceptance. Two specialist implementation agents work **in parallel**:
 - **iOS Agent:** Swift, SwiftUI, HealthKit, UserNotifications, Keychain, platform build/unit/UI/device tests.
 - **Android Agent:** Kotlin, Jetpack Compose, Health Connect, alarms/notifications, Keystore, platform build/unit/UI/device tests.
 
 The Mobile Lead issues **one canonical feature brief and acceptance matrix** to both agents simultaneously. Platform differences (permission flows, OS-specific APIs, lifecycle constraints and idiomatic UX) are explicitly documented as deltas, not silently forced into identical code. Each agent works in an isolated branch/worktree and owns only its platform files; the lead manages integration and shared specification changes.
 
-## Shared feature brief — required before dispatch
+## Candidate shared feature brief — for future external handoff only
 Feature/task ID and owner GO; product intent and in/out of scope; intended profile and permissions; user flows, states and screen definitions; field-level API/OpenAPI version when backend endpoints are needed; fixture IDs; offline behavior; accessibility and tr/az/en labels; error-state and privacy expectations; security invariants; event/timezone rules; negative tests; acceptance evidence; dependencies and stop conditions. **If backend schemas are unfrozen, only synthetic/local UI prototype scope expressly authorized by the owner may be dispatched.**
 
-## Parallel handoff and feedback
+## Possible future parallel handoff and feedback (external system)
 1. Lead reviews MASTER, ADR-005, API/gate statuses and current task permissions; refuses superseded/SUSPENDED handoffs.
 2. Lead freezes a *task-level* specification version/hash for the feature (this does not imply whole API contract freeze) and assigns both agents identical behavior/acceptance cases.
 3. iOS and Android agents each prepare a brief implementation plan and raise unresolved platform-specific constraints early. Lead decides UX-level deltas only within approved scope; owner resolves architectural/clinical/security changes.
@@ -26,7 +29,7 @@ Feature/task ID and owner GO; product intent and in/out of scope; intended profi
 6. CI checks + code review for each platform, security review, OpenAPI compatibility when relevant, deterministic synthetic E2E flows and no regression; only then feature state becomes review-ready. OWNER/Master gates still control merges/releases as applicable.
 7. Lead publishes one consolidated report: iOS PASS/FAIL/NOT VERIFIED, Android PASS/FAIL/NOT VERIFIED, shared acceptance matrix, deviations, outstanding risks, references, next action. **Both platforms must reach required acceptance for a feature to be called cross-platform DONE.** Platform-specific staging may proceed only with separate owner scope.
 
-## Suggested parity matrix per feature
+## Suggested shared acceptance criteria (documentation only)
 | Test dimension | iOS Agent | Android Agent | Lead acceptance |
 | --- | --- | --- | --- |
 | UX flow and validation | SwiftUI tests | Compose/UI tests | Same intent and errors; native affordances permitted |
@@ -48,4 +51,7 @@ Feature/task ID and owner GO; product intent and in/out of scope; intended profi
 - Health-related safety, permissions and medical-domain correctness gates cannot be waived by the lead. Lead coordinates; owner retains decisions and release authorization.
 
 ## Relationship to ADRs
+This document is deliberately non-binding regarding agent infrastructure. The only owner-approved mobile architectural decision recorded here is native iOS and Android under ADR-005. Agent staffing, automation and execution are managed elsewhere and are outside this repository's scope.
+
+
 Implements accepted native mobile direction ADR-005. Keeps ADR-012 Go microservices/Kubernetes and ADR-017 unified product/account boundaries unchanged. ADR-015, ADR-016 and individual API schemas stay in their documented proposal/open statuses. No coding authorized by this process document alone.
