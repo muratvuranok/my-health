@@ -21,30 +21,30 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 
 ## Accepted decisions — unchanged
 - **STR-001 ACCEPTED:** Türkiye and Azerbaijan first, then validated global expansion.
-- **ADR-001 ACCEPTED:** individual initial user; family permission architecture designed now, cross-account sharing released later.
+- **ADR-001 ACCEPTED:** individual-first, with owner-approved 2026-10-19 same-device caregiver-managed profile in MVP; cross-account sharing is still deferred.
 - **ADR-002 ACCEPTED:** encrypted local data plus controlled cloud sync as architectural intent; encryption/key model OPEN.
 - **ADR-003 ACCEPTED:** My Health authoritative verified medication schedule; imports cannot silently overwrite it.
 - **ADR-004 ACCEPTED:** private TestFlight before public release, gated for real data.
 - **ADR-007 ACCEPTED (conventions only):** contract-first OpenAPI 3.1, snake_case, errors/compatibility; endpoint schemas and contract freeze remain OPEN.
 - **ADR-015 PROPOSED (no owner acceptance recorded):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
 - **ADR-016 PROPOSED (no owner acceptance recorded):** per-platform adapters, minimal per-type data access, separated OS/user/server authorization and provenance; integration API draft NOT FROZEN.
-- **ADR-017 ACCEPTED (single-product account/workspace structure):** One My Health identity and application; user chooses intended purpose at onboarding; module visibility and workspace contexts vary by eligibility, but workspace admin roles never confer patient-data access. Professional modules remain PROPOSED and gated; acceptance of a shared account does not add workspace schema to MVP.
+- **ADR-017 ACCEPTED (reaffirmed by owner 2026-10-19; single-product account/workspace structure):** One My Health identity and application; user chooses intended purpose at onboarding; module visibility and workspace contexts vary by eligibility, but workspace admin roles never confer patient-data access. Professional modules remain PROPOSED and gated; acceptance of a shared account does not add workspace schema to MVP.
 - **ADR-012 ACCEPTED IN PRINCIPLE:** bounded microservices and Kubernetes learning-first target. **ADR-013 is only PROPOSED**; no reversion to monolith approved.
 - **IOT-001 / MH-IOT-01:** one unified post-MVP connected-device initiative (tracking alias, not a second decision).
 
 ## Open decisions / proposals
-- **ADR-005 PROPOSED:** React Native/TypeScript + Expo development builds vs SwiftUI/Flutter alternatives; no final platform implementation GO.
+- **ADR-005 ACCEPTED:** Owner confirmed React Native + Expo on 2026-10-19; Development Builds with TypeScript and native adapters where necessary. Device verification remains OPEN.
 - **ADR-009 DRAFT/OPEN:** medication temporal domain including PRN, DST, travel, tapering, history.
 - **ADR-010 DRAFT/OPEN:** server-readable vs E2EE vs local-only alpha option, sync/conflict protocol and recovery; ADR-002 remains accepted.
-- **ADR-013 PROPOSED:** modular-monolith-first deployment amendment to ADR-012 (NOT accepted).
-- **ADR-014 PROPOSED:** local-only alpha (NOT accepted).
+- **ADR-013 NOT SELECTED:** Owner reaffirmed ADR-012 microservices + Kubernetes on 2026-10-19. ADR-013 is historical alternative.
+- **ADR-014 ACCEPTED (initial alpha only):** Owner selected local-only initial alpha 2026-10-19. ADR-002 future cloud-sync intent remains intact; ADR-010 OPEN.
 - **ADR-019 PROPOSED:** permissioned in-app messages between clients and dietitians, coaches, physicians or authorized caregivers. This is separate from accepted ADR-015 outbound email/push delivery. Encryption/clinical record retention remain OPEN.
 - **ADR-018 PROPOSED:** optional purchasable modules and subscription entitlement models; core medication safety not paywalled, commercial pricing and provider OPEN. One account and modular contexts remain accepted under ADR-017.
 - **ADR-006/008/011 NOT YET WRITTEN:** tech stack versions, auth state machine, consent/grants/retention. ADR-007 conventions are accepted but field-level OpenAPI is NOT approved. No implicit choice.
 - Hosting region and Türkiye/Azerbaijan legal/KVKK transfer review OPEN; pricing and business model OPEN; trademark/brand clearance OPEN; activation metric OPEN; web timing OPEN; actual Health Connect/HealthKit OS matrix OPEN.
 
 ## Implementation status
-**ARCHITECTURE STATUS:** ADR-007 API conventions and ADR-012 microservices/Kubernetes are accepted; ADR-017 single-product/onboarding structure is accepted. ADR-015 notifications and ADR-016 integrations remain PROPOSED pending explicit owner approval; their API drafts are not frozen. CONTRACT FREEZE: NO-GO** — existing API_CONTRACT and AUTH_DESIGN are outlines, not final OpenAPI request/response schemas. **CLAUDE_BACKEND_EXECUTION: SUSPENDED**; old local implementation GO is invalid for current topology and contract risk. A new implementation authorization requires an approved architecture/contract scope and current task. No code or CI is implied by these documents. Synthetic prototypes may be separately authorized; no claim of passed tests or legal compliance.
+**ARCHITECTURE STATUS:** ADR-005 mobile, ADR-007 API conventions, ADR-012 microservices/Kubernetes, ADR-014 local-only initial alpha and ADR-017 single-product structure are accepted. The same-device caregiver-managed MVP profile is explicitly approved. ADR-015 notifications and ADR-016 integrations remain PROPOSED pending explicit owner approval; their API drafts are not frozen. CONTRACT FREEZE: NO-GO** — existing API_CONTRACT and AUTH_DESIGN are outlines, not final OpenAPI request/response schemas. **CLAUDE_BACKEND_EXECUTION: SUSPENDED**; old local implementation GO is invalid for current topology and contract risk. A new implementation authorization requires an approved architecture/contract scope and current task. The MH-PROT-001 handoff is prepared for planning, with implementation requiring separate GO. No code or CI is implied by these documents. Synthetic prototypes may be separately authorized; no claim of passed tests or legal compliance.
 
 ## Release gates
 GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-02 Apple/Android platform feasibility OPEN; GATE-03 sync/encryption/restore OPEN; GATE-04 real-data beta/TestFlight BLOCKED until prerequisites and explicit GO.
@@ -67,7 +67,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/architecture/ARCHITECTURE_AUDIT_V1.md`](docs/architecture/ARCHITECTURE_AUDIT_V1.md) | DRAFT review; contract-freeze hold |
 | [`docs/decisions/ADR-001-004.md`](docs/decisions/ADR-001-004.md) | ACCEPTED owner decisions |
 | [`docs/decisions/STR-001-MARKETS.md`](docs/decisions/STR-001-MARKETS.md) | ACCEPTED market decision |
-| [`docs/decisions/ADR-005-MOBILE-PLATFORM.md`](docs/decisions/ADR-005-MOBILE-PLATFORM.md) | PROPOSED |
+| [`docs/decisions/ADR-005-MOBILE-PLATFORM.md`](docs/decisions/ADR-005-MOBILE-PLATFORM.md) | ACCEPTED (mobile platform) |
 | [`docs/decisions/ADR-007-API-CONVENTIONS.md`](docs/decisions/ADR-007-API-CONVENTIONS.md) | ACCEPTED conventions; payloads not frozen |
 | [`docs/decisions/ADR-009-MEDICATION-DOMAIN.md`](docs/decisions/ADR-009-MEDICATION-DOMAIN.md) | DRAFT / OPEN |
 | [`docs/decisions/ADR-010-SYNC-ENCRYPTION.md`](docs/decisions/ADR-010-SYNC-ENCRYPTION.md) | DRAFT / OPEN |
@@ -77,8 +77,8 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md`](docs/decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md) | ACCEPTED single product, modular workspaces; professional releases PROPOSED |
 | [`docs/decisions/ADR-019-PERMISSIONED-MESSAGING.md`](docs/decisions/ADR-019-PERMISSIONED-MESSAGING.md) | PROPOSED messaging and relationship/consent design |
 | [`docs/decisions/ADR-018-MODULAR-ENTITLEMENTS-MONETIZATION.md`](docs/decisions/ADR-018-MODULAR-ENTITLEMENTS-MONETIZATION.md) | PROPOSED commercial packaging and entitlements |
-| [`docs/decisions/ADR-013-PRODUCT-FIRST-DEPLOYMENT.md`](docs/decisions/ADR-013-PRODUCT-FIRST-DEPLOYMENT.md) | PROPOSED amendment; no override |
-| [`docs/decisions/ADR-014-LOCAL-ONLY-ALPHA.md`](docs/decisions/ADR-014-LOCAL-ONLY-ALPHA.md) | PROPOSED |
+| [`docs/decisions/ADR-013-PRODUCT-FIRST-DEPLOYMENT.md`](docs/decisions/ADR-013-PRODUCT-FIRST-DEPLOYMENT.md) | NOT SELECTED; historical alternative |
+| [`docs/decisions/ADR-014-LOCAL-ONLY-ALPHA.md`](docs/decisions/ADR-014-LOCAL-ONLY-ALPHA.md) | ACCEPTED (local-first alpha only) |
 | [`docs/backend/BACKEND_MASTER_PLAN_V1.md`](docs/backend/BACKEND_MASTER_PLAN_V1.md) | SUPERSEDED and ON HOLD |
 | [`docs/backend/API_CONTRACT.md`](docs/backend/API_CONTRACT.md) | DRAFT / NOT FROZEN |
 | [`docs/backend/NOTIFICATION_API_DRAFT.md`](docs/backend/NOTIFICATION_API_DRAFT.md) | DRAFT notification request/response |
@@ -90,6 +90,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/integrations/CONNECTED_DEVICES.md`](docs/integrations/CONNECTED_DEVICES.md) | DRAFT (IOT-001/MH-IOT-01) |
 | [`docs/testing/RELEASE_GATES.md`](docs/testing/RELEASE_GATES.md) | DRAFT gates OPEN |
 | [`docs/reviews/REVIEW-2026-10-18.md`](docs/reviews/REVIEW-2026-10-18.md) | DRAFT review record |
+| [`handoff/MH-PROT-001-SYNTHETIC-MOBILE-PROTOTYPE.md`](handoff/MH-PROT-001-SYNTHETIC-MOBILE-PROTOTYPE.md) | PREPARED, implementation GO separate |
 | [`handoff/CLAUDE_BACKEND_EXECUTION.md`](handoff/CLAUDE_BACKEND_EXECUTION.md) | SUSPENDED — NEVER EXECUTE |
 | [`handoff/LILI_AI_IMPLEMENTATION_CONTRACT.md`](handoff/LILI_AI_IMPLEMENTATION_CONTRACT.md) | DRAFT — must follow current task |
 | [`archive/conversation-index.md`](archive/conversation-index.md) | DRAFT metadata index; not verbatim transcript |
