@@ -19,6 +19,9 @@ This decision covers platform architecture, not a GO to implement, release, inge
 ## Rationale
 Reliable, testable direct access to HealthKit and Health Connect, native notification scheduling and handling, background restrictions, encrypted local storage, platform-specific permission UX and future BLE integrations. Native APIs do not bypass iOS/Android scheduling or background restrictions: test on real devices.
 
+## Accepted parallel-agent delivery model (owner direction, 2026-10-19)
+A single **Mobile Lead Agent** receives the owner-approved feature request and produces one shared acceptance specification. The lead dispatches this **same functionality and acceptance criteria in parallel** to separate **iOS Agent (Swift/SwiftUI)** and **Android Agent (Kotlin/Jetpack Compose)**. Each agent owns its native code, tests and platform-specific delta documentation. Once agents report completion, the lead verifies their code, actual builds, test evidence, behavioral parity and regression risk, and issues one consolidated two-platform PASS/FAIL/NOT VERIFIED report. A feature is not cross-platform DONE unless both required platform acceptance suites pass and the lead validates the evidence; OS/device tests must not be assumed to pass from simulation or agent claims. This delivery strategy does **not** open an implementation GO or remove unresolved MASTER gates. Full execution rules: [Native Agent Delivery Protocol](../../docs/mobile/NATIVE_AGENT_DELIVERY_PROTOCOL.md).
+
 ## Trade-offs and engineering controls
 - Two clients increase UI implementation, developer workload and ongoing platform maintenance.
 - Avoid divergent behavior via shared OpenAPI 3.1 contracts, machine error codes, consistent state transitions, seeded synthetic fixtures, golden behavior tests and release gates. Swift/Kotlin generated SDKs may be used after contract freeze, not handwritten ad-hoc API variations.
