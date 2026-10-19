@@ -1,7 +1,7 @@
 Status: ACCEPTED — single-product account/workspace architecture; professional feature release remains PROPOSED
 Date: 2026-10-18
 Owner: My Health MASTER
-Owner acceptance: 2026-10-18 — explicit owner chat instruction that My Health is one product/account, with purpose selection at onboarding and profession-specific modules. Acceptance is structural only, not professional feature launch approval.
+Owner acceptance: 2026-10-18 — explicit owner chat instruction that My Health is one product/account, with purpose selection at onboarding and profession-specific modules; reaffirmed 2026-10-19 with "ADR-017 tek ürün ve hesap: Kabulü koru". Acceptance is structural only, not professional feature launch approval.
 Supersedes: None
 Superseded by: None
 
@@ -16,6 +16,9 @@ Superseded by: None
 - Clinical patient follow-up (physician/qualified healthcare professional)
 
 The chosen purpose determines which relevant onboarding steps, navigation modules and workspace entrypoints are made available, **subject to eligibility and separate authorization**. It does NOT create separate products, codebases, logins or independent health-data ownership systems. Selection is configurable later. One person can use personal tracking and operate one or more workspaces in different capacities. This is an **accepted structural design direction**, not approval to ship professional features, clinical activity or automated therapy changes.
+
+## Alpha interpretation (2026-10-19)
+The accepted initial **local-only** alpha does not require working sign-in, hosted account provisioning, professional workspaces or role/grant schema. A synthetic on-device persona/context demonstration is acceptable, provided no professional module is represented as released. One-product/one-account is a long-term identity rule, not an order to provision cloud accounts in an offline alpha. On-device managed profiles are allowed for one lawful caregiver/operator, but they are not linked accounts, online patient relationships or consent grants to third parties.
 
 ## Key architectural distinctions
 - **Account / identity:** authenticates a natural person. A single account can hold multiple contextual memberships; authentication never treats email domain or self-selected profession as proof of credentials.
