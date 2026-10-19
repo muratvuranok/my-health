@@ -10,12 +10,13 @@ This is the single task-priority index; GitHub Issues/PRs contain details and ev
 
 ## OWNER DECISIONS RECORDED — 2026-10-19
 
-1. ADR-005 mobile: **ACCEPT** — React Native + Expo; TypeScript/Development Builds for native capability.
+1. ADR-005 mobile: **REVISED LATER ON 2026-10-19 — ACCEPTED NATIVE iOS Swift/SwiftUI + Android Kotlin/Jetpack Compose**. Earlier same-day React Native + Expo choice (4d9d20b) is withdrawn.
 2. ADR-013 monolith-first: **REJECT / NOT SELECTED** — ADR-012 Go microservices + Kubernetes retains authority.
 3. ADR-014 initial alpha: **ACCEPT** — local-only first; long-term sync direction ADR-002 unchanged.
 4. E3 caregiver-managed profile in MVP: **YES**, on the same device; no cross-account grants.
 5. ADR-017 one app/account/onboarding structure: **ACCEPTANCE REAFFIRMED**; professional modules remain BACKLOG.
 6. Repository visibility: **OPEN** — no instruction to make private; external review may continue. Visibility change requires owner choice.
+7. First prototype platform: **OWNER DECISION REQUIRED — iOS / Android / both**. No MH-PROT-001 implementation GO until selected.
 
 **ADR-010 remains OPEN** for cloud encryption, key custody, sync and hosting. ADR-009 medication temporal model, field-level OpenAPI, real-device integration/reminder/security proofs, and real-data release gates remain OPEN. ADR-015/016 retain PROPOSED status.
 
@@ -24,14 +25,14 @@ This is the single task-priority index; GitHub Issues/PRs contain details and ev
 | Task | Status | Reference | Gate |
 |---|---|---|---|
 | MH-REV-001 Reconcile planning documents | DONE (PR #21, squash 46e92bb; R8 PR #22) | 2026-10-18 architecture review PR | Docs only |
-| MH-PROT-001 Synthetic mobile prototype | HANDOFF PREPARED — IMPLEMENTATION GO REQUIRED | handoff/MH-PROT-001-SYNTHETIC-MOBILE-PROTOTYPE.md | Synthetic-only, offline, no provider/backend |
+| MH-PROT-001 Synthetic native mobile prototype | PLAN ONLY — platform selection and separate implementation GO required | handoff/MH-PROT-001-SYNTHETIC-MOBILE-PROTOTYPE.md | Owner selects first native platform; synthetic-only/offline; no provider/backend |
 | MH-ADR-019 In-app client-professional messaging | PROPOSED / BACKLOG | ADR-019 | Authorization, encryption, retention, privacy and clinical review OPEN |
 | MH-ADR-018 Optional paid modules, bundles and entitlements | PROPOSED / COMMERCIAL MODEL OPEN | ADR-018 | Store policy, pricing, downgrade and privacy review |
 | MH-ADR-017 Single product and purpose-based onboarding | ACCEPTED / PROFESSIONAL MODULES DEFERRED | ADR-017 | Module release, consent and professional verification remain OPEN |
 | MH-FUTURE-003 Dietitian-created weekly meal plan and member logging | PROPOSED / BACKLOG | docs/product/FUTURE-003-NUTRITION-MEAL-PLANS.md | Consent, versioned API and legal review before development |
 | MH-FUTURE-002 Patient-controlled care team (dietitian/trainer/physician) | PROPOSED / BACKLOG | docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md | Medical/legal review and explicit owner GO |
 | MH-FUTURE-001 Coach workspace and consented member tracking | PROPOSED / BACKLOG | docs/product/FUTURE-001-COACH-WORKSPACE.md | Separate owner GO and privacy/authorization ADR required |
-| MH-ADR-005 Cross-platform decision | ACCEPTED 2026-10-19 | ADR-005 | Owner acceptance |
+| MH-ADR-005 Native iOS/Android mobile platform | ACCEPTED (revised 2026-10-19) | ADR-005 | First prototype platform and real-device safety matrix OPEN |
 | MH-ADR-016 Integration permission matrix and typed contracts | PROPOSED ARCHITECTURE / API DRAFT | ADR-016, INTEGRATION_API_DRAFT.md | Real device and privacy validation OPEN |
 | MH-ADR-015 Notification, email and push | PROPOSED / API DRAFT | ADR-015, NOTIFICATION_API_DRAFT.md | Provider selection and real delivery OPEN |
 | MH-ADR-007 API conventions | CONVENTIONS ACCEPTED (owner chat) / SCHEMAS OPEN | ADR-007 | OpenAPI contract freeze NOT granted |
