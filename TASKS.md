@@ -32,7 +32,7 @@ Additional pending owner approvals: **ADR-015 notification architecture**, **ADR
 | MH-FUTURE-001 Coach workspace and consented member tracking | PROPOSED / BACKLOG | docs/product/FUTURE-001-COACH-WORKSPACE.md | Separate owner GO and privacy/authorization ADR required |
 | MH-ADR-005 Cross-platform decision | PROPOSED | ADR-005 | Owner acceptance |
 | MH-ADR-016 Integration permission matrix and typed contracts | PROPOSED ARCHITECTURE / API DRAFT | ADR-016, INTEGRATION_API_DRAFT.md | Real device and privacy validation OPEN |
-| MH-ADR-015 Notification, email and push | ARCHITECTURE ACCEPTED / API DRAFT | ADR-015, NOTIFICATION_API_DRAFT.md | Provider selection and real delivery OPEN |
+| MH-ADR-015 Notification, email and push | PROPOSED ARCHITECTURE / API DRAFT | ADR-015, NOTIFICATION_API_DRAFT.md | Provider selection and real delivery OPEN |
 | MH-ADR-007 API conventions | CONVENTIONS ACCEPTED (owner chat) / SCHEMAS OPEN | ADR-007 | OpenAPI contract freeze NOT granted |
 | MH-ADR-009 Medication time/domain rules | OPEN | ADR-009 | Owner/domain review |
 | MH-ADR-010 Sync and encryption | OPEN | ADR-010 | Owner/security/legal review |
