@@ -11,6 +11,7 @@ This is the single task-priority index; GitHub Issues/PRs contain details and ev
 | Task | Status | Reference | Gate |
 |---|---|---|---|
 | MH-REV-001 Reconcile planning documents | IN REVIEW | 2026-10-18 architecture review PR | Docs only |
+| MH-ADR-019 In-app client-professional messaging | PROPOSED / BACKLOG | ADR-019 | Authorization, encryption, retention, privacy and clinical review OPEN |
 | MH-ADR-018 Optional paid modules, bundles and entitlements | PROPOSED / COMMERCIAL MODEL OPEN | ADR-018 | Store policy, pricing, downgrade and privacy review |
 | MH-ADR-017 Single product and purpose-based onboarding | ACCEPTED STRUCTURE / IMPLEMENTATION NOT AUTHORIZED | ADR-017 | Module release, consent and professional verification remain OPEN |
 | MH-FUTURE-003 Dietitian-created weekly meal plan and member logging | PROPOSED / BACKLOG | docs/product/FUTURE-003-NUTRITION-MEAL-PLANS.md | Consent, versioned API and legal review before development |
