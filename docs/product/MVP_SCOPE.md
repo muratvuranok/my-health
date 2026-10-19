@@ -7,7 +7,7 @@ Superseded by: None
 # MVP scope and acceptance
 
 ## P0
-1. Native mobile clients under **ACCEPTED ADR-005**: iOS Swift/SwiftUI and Android Kotlin/Jetpack Compose; first prototype/release platform sequence OPEN. Turkish, Azerbaijani and English localization.
+1. Native mobile clients under **ACCEPTED ADR-005**: iOS Swift/SwiftUI and Android Kotlin/Jetpack Compose; MH-PROT-001 prototypes on iOS and Android in parallel (owner decision 2026-10-19); public release sequence OPEN. Turkish, Azerbaijani and English localization.
 2. Medication list, clinician-verified schedule entry, dosage event history, offline local notifications, explicit confirmation and missed/skipped states.
 3. HealthKit permission flow and read-only ingestion of selected vital measurements with source/provenance and timestamps.
 4. Encrypted local storage for eventual real-data use; **initial alpha is local-only under ACCEPTED ADR-014**. Account creation, cloud sync, server encryption and real backend communication are not required for initial alpha and remain separately gated.

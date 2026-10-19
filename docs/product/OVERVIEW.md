@@ -26,7 +26,7 @@ Initial hypotheses: adults managing multiple medicines and regular measurements,
 Medication safety; reliable offline behavior within mobile OS constraints; provenance and user control; accessibility and multilingual UX; no medical diagnosis or automatic dosage advice; no sale of personal health information; no invented outcomes or traction.
 
 ## Current technical direction, not frozen
-**ACCEPTED ADR-005:** native Swift/SwiftUI iOS and Kotlin/Jetpack Compose Android mobile clients. The first prototype/release platform order remains OPEN. Go microservices + Kubernetes learning-first is **ACCEPTED ADR-012 in principle**. PostgreSQL and OpenAPI 3.1 are the target design; auth, sync encryption, hosting and exact request/response semantics remain OPEN. No deployed app, running CI or production backend is claimed.
+**ACCEPTED ADR-005:** native Swift/SwiftUI iOS and Kotlin/Jetpack Compose Android mobile clients. MH-PROT-001 prototypes will be planned for iOS and Android in parallel (owner decision 2026-10-19); public release order remains OPEN. Go microservices + Kubernetes learning-first is **ACCEPTED ADR-012 in principle**. PostgreSQL and OpenAPI 3.1 are the target design; auth, sync encryption, hosting and exact request/response semantics remain OPEN. No deployed app, running CI or production backend is claimed.
 
 ## Roadmap hypotheses
 1. Research and synthetic clickable mobile prototype.
