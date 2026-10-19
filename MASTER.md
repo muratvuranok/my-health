@@ -9,7 +9,7 @@ Superseded by: None
 Repository: muratvuranok/my-health. **Temporarily PUBLIC** to permit external AI tools to read documentation; the owner intends to make it private after review. Public visibility is NOT permission to publish sensitive health data, secrets or private conversation content. Product brand remains a working name.
 
 ## Scope and authority
-MASTER owns product strategy, accepted decisions, priorities, governance and release gates. Lili AI and Claude are implementation/review participants within explicit scoped tasks only. The My Health repository is not the Lili AI platform repository. No production deployment, live health records, secrets, autonomous clinical dosing advice or public health claims without explicit MASTER GO.
+MASTER owns product strategy, accepted decisions, priorities, governance and release gates. Lili AI and Claude are implementation/review participants within explicit scoped tasks only. The My Health repository is not the Lili AI platform repository. Agent orchestration, agents and their lead are managed in a separate project; no agent infrastructure is part of this repository. No production deployment, live health records, secrets, autonomous clinical dosing advice or public health claims without explicit MASTER GO.
 
 ## Document authority order
 1. **MASTER** — owner-approved governance and decision status.
@@ -30,7 +30,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-012 ACCEPTED IN PRINCIPLE:** bounded microservices and Kubernetes learning-first target. **ADR-013 is only PROPOSED**; no reversion to monolith approved.
 - **IOT-001 / MH-IOT-01:** one unified post-MVP connected-device initiative (tracking alias, not a second decision).
 
-- **ADR-005 ACCEPTED:** Owner confirmed React Native + Expo on 2026-10-19; Development Builds with TypeScript and native adapters where necessary. Device verification remains OPEN.
+- **ADR-005 ACCEPTED (revised later 2026-10-19):** Owner withdrew the earlier same-day React Native/Expo selection (main commit 4d9d20b). Current mobile direction is **native iOS Swift/SwiftUI plus Android Kotlin/Jetpack Compose**. First prototype/release platform order and real-device validation remain OPEN.
 - **ADR-014 ACCEPTED (initial alpha only):** Owner selected local-only initial alpha 2026-10-19. ADR-002 future cloud-sync intent remains intact; ADR-010 OPEN.
 ## Open decisions / proposals
 - **ADR-015 PROPOSED (no owner acceptance recorded):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
@@ -44,7 +44,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - Hosting region and Türkiye/Azerbaijan legal/KVKK transfer review OPEN; pricing and business model OPEN; trademark/brand clearance OPEN; activation metric OPEN; web timing OPEN; actual Health Connect/HealthKit OS matrix OPEN.
 
 ## Implementation status
-**ARCHITECTURE STATUS:** ADR-005 mobile, ADR-007 API conventions, ADR-012 microservices/Kubernetes, ADR-014 local-only initial alpha and ADR-017 single-product structure are accepted. The same-device caregiver-managed MVP profile is explicitly approved. ADR-015 notifications and ADR-016 integrations remain PROPOSED pending explicit owner approval; their API drafts are not frozen. CONTRACT FREEZE: NO-GO** — existing API_CONTRACT and AUTH_DESIGN are outlines, not final OpenAPI request/response schemas. **CLAUDE_BACKEND_EXECUTION: SUSPENDED**; old local implementation GO is invalid for current topology and contract risk. A new implementation authorization requires an approved architecture/contract scope and current task. The MH-PROT-001 handoff is prepared for planning, with implementation requiring separate GO. No code or CI is implied by these documents. Synthetic prototypes may be separately authorized; no claim of passed tests or legal compliance.
+**ARCHITECTURE STATUS:** ADR-005 mobile, ADR-007 API conventions, ADR-012 microservices/Kubernetes, ADR-014 local-only initial alpha and ADR-017 single-product structure are accepted. The same-device caregiver-managed MVP profile is explicitly approved. ADR-015 notifications and ADR-016 integrations remain PROPOSED pending explicit owner approval; their API drafts are not frozen. **CONTRACT FREEZE: NO-GO** — existing API_CONTRACT and AUTH_DESIGN are outlines, not final OpenAPI request/response schemas. **CLAUDE_BACKEND_EXECUTION: SUSPENDED**; old local implementation GO is invalid for current topology and contract risk. A new implementation authorization requires an approved architecture/contract scope and current task. The MH-PROT-001 handoff is prepared for planning, with implementation requiring separate GO. No code or CI is implied by these documents. Synthetic prototypes may be separately authorized; no claim of passed tests or legal compliance.
 
 ## Release gates
 GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-02 Apple/Android platform feasibility OPEN; GATE-03 sync/encryption/restore OPEN; GATE-04 real-data beta/TestFlight BLOCKED until prerequisites and explicit GO.
@@ -67,7 +67,7 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/architecture/ARCHITECTURE_AUDIT_V1.md`](docs/architecture/ARCHITECTURE_AUDIT_V1.md) | DRAFT review; contract-freeze hold |
 | [`docs/decisions/ADR-001-004.md`](docs/decisions/ADR-001-004.md) | ACCEPTED owner decisions |
 | [`docs/decisions/STR-001-MARKETS.md`](docs/decisions/STR-001-MARKETS.md) | ACCEPTED market decision |
-| [`docs/decisions/ADR-005-MOBILE-PLATFORM.md`](docs/decisions/ADR-005-MOBILE-PLATFORM.md) | ACCEPTED (mobile platform) |
+| [`docs/decisions/ADR-005-MOBILE-PLATFORM.md`](docs/decisions/ADR-005-MOBILE-PLATFORM.md) | ACCEPTED native Swift/SwiftUI + Kotlin/Compose; earlier RN choice superseded |
 | [`docs/decisions/ADR-007-API-CONVENTIONS.md`](docs/decisions/ADR-007-API-CONVENTIONS.md) | ACCEPTED conventions; payloads not frozen |
 | [`docs/decisions/ADR-009-MEDICATION-DOMAIN.md`](docs/decisions/ADR-009-MEDICATION-DOMAIN.md) | DRAFT / OPEN |
 | [`docs/decisions/ADR-010-SYNC-ENCRYPTION.md`](docs/decisions/ADR-010-SYNC-ENCRYPTION.md) | DRAFT / OPEN |
