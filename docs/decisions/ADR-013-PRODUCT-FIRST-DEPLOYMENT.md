@@ -1,6 +1,7 @@
-Status: PROPOSED — amendment to accepted ADR-012
+Status: REJECTED AS CURRENT DEPLOYMENT ALTERNATIVE — retained for historical comparison
 Date: 2026-10-18
 Owner: My Health MASTER
+Owner decision: 2026-10-19 — owner selected ADR-012 microservices + Kubernetes instead of ADR-013 modular-monolith-first. No reversal of ADR-012.
 Supersedes: None
 Superseded by: None
 
@@ -13,7 +14,7 @@ Build one Go modular monolith with package boundaries identity/profile/medicatio
 Accepted ADR-012 deploys a small number of independently deployable microservices with K8s. That supports direct service operations learning, but adds cross-service consistency, distributed tracing, rollout and credential complexity. This amendment reduces early overhead but changes deployment topology.
 
 ## Authority
-**PROPOSED ONLY: ADR-012 REMAINS ACCEPTED and authoritative.** Do not implement monolith topology unless the owner approves this amendment.
+**NOT SELECTED by owner on 2026-10-19.** ADR-012 microservices + Kubernetes remains accepted and authoritative. This is a historical alternative, not implementation authorization. A new explicit owner amendment is required to reconsider this alternative.
 
 ## Evidence to change
 Interview velocity, iteration lead time, measurable independent scaling needs, operational overhead, user security and recovery tests; reversible at package boundaries but extraction is never free.
