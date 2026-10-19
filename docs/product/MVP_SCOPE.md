@@ -7,7 +7,7 @@ Superseded by: None
 # MVP scope and acceptance
 
 ## P0
-1. Mobile app (platform per PROPOSED ADR-005; current direction React Native + TypeScript, iOS and Android); Turkish, Azerbaijani and English localization.
+1. Native mobile app (ACCEPTED ADR-005: iOS Swift/SwiftUI and Android Kotlin/Jetpack Compose; initial prototype/release platform order OPEN); Turkish, Azerbaijani and English localization.
 2. Medication list, clinician-verified schedule entry, dosage event history, offline local notifications, explicit confirmation and missed/skipped states.
 3. HealthKit permission flow and read-only ingestion of selected vital measurements with source/provenance and timestamps.
 4. Encrypted local vault and secure account/sync once encryption architecture approved.
