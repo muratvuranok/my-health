@@ -45,6 +45,9 @@ The chosen purpose determines which relevant onboarding steps, navigation module
 | Clinician | Patient roster, measurements, medication adherence review, follow-up | Verified clinical eligibility AND patient grant; clinical-order flow separately gated |
 Workspace size 50+ clients is a nonfunctional target to validate with representative synthetic load, not a blanket limit or license to inspect 50 patient records.
 
+## One product, two native clients
+Per accepted ADR-005, the single My Health product/account experience is delivered through separate native iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose) apps. A unified product does not imply one cross-platform UI framework. No separate patient/coach/doctor apps are authorized.
+
 ## Single product vs service deployments
 A single product/repository UX **does not require a monolith backend**. Accepted ADR-012 microservices+Kubernetes continues to govern implementation direction. Identity, Profile/Grants, Medication, Records, Notification and future Plans/Workspaces are logical bounded contexts with one public API namespace /v1 through BFF/gateway. Avoid creating one service/pod per persona. Prefer shared capabilities and permission-aware modules over duplicating medication and measurement data per workspace.
 
