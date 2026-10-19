@@ -4,6 +4,8 @@ Owner: My Health MASTER
 Supersedes: None
 Superseded by: None
 
+> **BACKLOG — does not shape MVP data model, endpoints, tests, deployments or release scope.** This is a post-MVP hypothesis only. Interview evidence and explicit owner GO are mandatory before promotion. Profession-specific features cannot silently alter accepted ADR-001 personal-first scope.
+
 # FUTURE-003 — Dietitian-authored meal plans and daily nutrition tracking
 
 ## Product concept
