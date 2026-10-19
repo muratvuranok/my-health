@@ -27,7 +27,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-004 ACCEPTED:** private TestFlight before public release, gated for real data.
 - **ADR-007 ACCEPTED (conventions only):** contract-first OpenAPI 3.1, snake_case, errors/compatibility; endpoint schemas and contract freeze remain OPEN.
 - **ADR-017 ACCEPTED (reaffirmed by owner 2026-10-19; single-product account/workspace structure):** One My Health identity and application; user chooses intended purpose at onboarding; module visibility and workspace contexts vary by eligibility, but workspace admin roles never confer patient-data access. Professional modules remain PROPOSED and gated; acceptance of a shared account does not add workspace schema to MVP.
-- **ADR-012 ACCEPTED IN PRINCIPLE:** bounded microservices and Kubernetes learning-first target. **ADR-013 is only PROPOSED**; no reversion to monolith approved.
+- **ADR-012 ACCEPTED IN PRINCIPLE:** bounded microservices and Kubernetes learning-first target. **ADR-013 NOT SELECTED**; no reversion to monolith approved.
 - **IOT-001 / MH-IOT-01:** one unified post-MVP connected-device initiative (tracking alias, not a second decision).
 
 - **ADR-005 ACCEPTED (revised later 2026-10-19):** Owner withdrew the earlier same-day React Native/Expo selection (main commit 4d9d20b). Current mobile direction is **native iOS Swift/SwiftUI plus Android Kotlin/Jetpack Compose**. **MH-PROT-001 prototype platforms: iOS and Android in parallel (owner decision 2026-10-19).** Public release order and real-device validation remain OPEN.
@@ -61,6 +61,9 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/product/FUTURE-001-COACH-WORKSPACE.md`](docs/product/FUTURE-001-COACH-WORKSPACE.md) | PROPOSED / BACKLOG |
 | [`docs/product/FUTURE-003-NUTRITION-MEAL-PLANS.md`](docs/product/FUTURE-003-NUTRITION-MEAL-PLANS.md) | PROPOSED — dietitian plans and client meal tracking |
 | [`docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md`](docs/product/FUTURE-002-CARE-TEAM-WORKSPACES.md) | PROPOSED / BACKLOG; clinical use gated |
+| [`docs/future/FUTURE-004-WATCH.md`](docs/future/FUTURE-004-WATCH.md) | BACKLOG — not scheduled; watch companions |
+| [`docs/future/FUTURE-005-ACTIVITY.md`](docs/future/FUTURE-005-ACTIVITY.md) | BACKLOG — not scheduled; workouts/routes |
+| [`docs/future/FUTURE-006-SLEEP.md`](docs/future/FUTURE-006-SLEEP.md) | BACKLOG — not scheduled; S3 audio reconsideration pending |
 | [`docs/product/OVERVIEW.md`](docs/product/OVERVIEW.md) | DRAFT product overview |
 | [`docs/business/STARTUP_STRATEGY.md`](docs/business/STARTUP_STRATEGY.md) | DRAFT hypotheses |
 | [`docs/architecture/SYSTEM_ARCHITECTURE.md`](docs/architecture/SYSTEM_ARCHITECTURE.md) | SUPERSEDED topology; historical |
