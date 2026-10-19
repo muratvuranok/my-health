@@ -53,3 +53,26 @@ The owner requests that **completed workouts, walking sessions and available map
 **Privacy:** Exercise routes and coordinates can expose a home, workplace or recurring habits. Workout-data permission and precise location/route permission are separate. Use least-privilege, optional imports, profile isolation, local-first handling, map visibility controls, deletion, and explicitly controlled sharing/export; **no default cloud upload or public map**. Keep raw routes out of logs and analytics. If HealthKit/Health Connect or a device omits route detail, say so transparently. Region, OS and provider capability are to be validated when that stage starts.
 
 **Immediate scope:** No activity tracker, route recording, map SDK, watch code or external agent work is added to current **MH-PROT-001 PLAN ONLY**. Once the phone medication/profile prototype works, deliver the smallest read-only activity history first; route display and more advanced watch functions follow in separate owner-approved tasks.
+
+## Sleep tracking and overnight analysis — phased direction (owner request 2026-10-19)
+**Product direction:** My Health should eventually show understandable overnight sleep quality, stages and relevant trends, inspired by Pillow, AutoSleep, Sleep Cycle, Oura and Garmin Connect. This is **planning only**, not new scope for the parallel iOS/Android **MH-PROT-001 phone prototype**, nor approval to deploy a tracker, record audio or start an agent.
+
+| Stage | First useful delivery | Explicitly deferred |
+|---|---|---|
+| 0 — Current phone prototype | Existing synthetic medication/profile experience remains unchanged | All sleep tracking implementation |
+| S1 — After phone foundation | **Read-only sleep history and nightly detail**: imported permitted sleep sessions from Apple HealthKit / Android Health Connect, start/end, duration, time asleep vs time in bed where supplied, awake/light/deep/REM intervals where supplied, source/device, timezone and missing-data states; week/month views | Proprietary sleep classification or medical claims |
+| S2 — Enriched night report | Optional nighttime heart-rate and supported HRV/respiration/SpO2/temperature trends, user-entered sleep notes, basic cross-night comparisons and clearly labeled **source-provided** sleep score if available | Invented scores, diagnosis, medication effectiveness claims |
+| S3 — Optional active overnight features | Evaluate dedicated smartwatch tracking, smartphone smart alarm and **separately opt-in** microphone-based snoring/sleep-sound detection only after OS feasibility, battery/privacy and user research | Continuous microphone recording by default, apnea diagnosis, guaranteed alarm precision |
+
+**Privacy and interpretation:** Sleep data and especially overnight bedroom audio are sensitive. Read permission must be purpose-specific, revocable and profile-isolated; recordings (if ever approved) default OFF and require a separate explicit user action and retention/deletion policy. No default cloud transfer, no background microphone capture added by accepting health data, no audio-derived sleep-apnea diagnosis. Sleep stages and vendor sleep scores are **estimates**, not medical sleep studies. Display supported source fields, not fabricated measurements.
+
+**Competitor/reference scan (2026-10-19):**
+- **Pillow** — Apple Watch sleep stages, quality, heart-rate overlay, trends; its nighttime sound recordings require a manually started iPhone session, unlike automatic watch sleep analysis. https://pillow.app/ ; https://intercom.help/pillow_app/en/articles/3733515-pillow-didn-t-record-any-sounds-during-sleep
+- **AutoSleep** — automatic Apple Watch sleep history, stages, consistency and local/privacy-focused presentation. https://apps.apple.com/us/app/autosleep-watch-sleep-tracker/id1164801111
+- **Sleep Cycle** — phone-first sound-based analysis and smart alarm. https://sleepcycle.com/the-app/smart-alarm
+- **Oura** — stage hypnogram, sleep score and recovery context from multiple sensors. https://support.ouraring.com/hc/en-us/articles/11752397946003-Sleep-Stages
+- **Garmin** — sleep coach and estimated personal sleep need based on recent sleep and activity. https://www.garmin.com/en-IE/garmin-technology/health-science/sleep-coach/
+
+**Integration feasibility baseline (verify when work begins):** HealthKit supports in-bed/awake/core/deep/REM sleep samples (https://developer.apple.com/documentation/healthkit/hkcategoryvaluesleepanalysis). Health Connect supports SleepSessionRecord with sleep stages under specific READ_SLEEP permission (https://developer.android.com/health-and-fitness/health-connect/features/sleep-sessions). Neither API guarantees that every watch/provider supplies every sleep stage, heart-rate sample, vendor score or nighttime sound recording. This roadmap does **not** authorize partner API access or third-party proprietary score reconstruction.
+
+**Delivery rule:** Do not create a separate sleep-data backend, nightly recording engine, algorithm testing program, detailed ADR or new watch workstream before an approved S1 task exists. First deliver a small useful read-only night's report from available, consented data; add active tracking only if evidence warrants it.
