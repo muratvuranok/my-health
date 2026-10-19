@@ -1,13 +1,14 @@
-Status: ACCEPTED — integration governance and boundary design; provider configurations and endpoint schemas OPEN
+Status: PROPOSED — integration boundary design; provider configurations and endpoint schemas OPEN
 Date: 2026-10-18
 Owner: My Health MASTER
+Owner acceptance: NOT RECORDED — no explicit owner approval of this ADR has been established; requires a separate owner decision.
 Supersedes: None
 Superseded by: None
 
 # ADR-016 — Integration architecture, authorization and data contracts
 
 ## Decision and scope
-**All external integrations use capability-specific adapters and an explicit registry; no vendor SDK is allowed to directly mutate medication schedules or write cross-service databases.** The integration boundary is logical, not necessarily a new deployed microservice. React Native orchestrates user consent and local platform adapter use. Go services own authorization, data provenance, durable sync, device registry and auditable server side provider connections. The medication service retains authority over schedule rules (ADR-003). This ADR approves **integration architecture conventions**, NOT blanket health access, a provider partnership, live OAuth credentials, any write permission, or final endpoint field sets.
+**All external integrations use capability-specific adapters and an explicit registry; no vendor SDK is allowed to directly mutate medication schedules or write cross-service databases.** The integration boundary is logical, not necessarily a new deployed microservice. React Native orchestrates user consent and local platform adapter use. Go services own authorization, data provenance, durable sync, device registry and auditable server side provider connections. The medication service retains authority over schedule rules (ADR-003). This ADR proposes **integration architecture conventions**, NOT blanket health access, a provider partnership, live OAuth credentials, any write permission, or final endpoint field sets.
 
 ## Integration registry
 | ID | Capability / provider | Owner | Proposed launch direction | Permission / credential | Direction | Rules |
@@ -63,7 +64,7 @@ Least-privilege scope/entitlement; purpose description localized tr/az/en; never
 ## Test matrix / release gates
 At least: permission approve/deny/revoke mid-sync; partial/limited history; no data vs denied; missing capability; Health Connect version differences and permission declaration; HealthKit authorized query with zero results; device locked/background tasks; duplicated and corrected sample; deleted record/tombstone; timezone/units; reconnect with expired cursor; offline long delay; parallel devices with same sample; wrong-profile selection; managed-profile vs linked-account access; consent revoked during import; full account erasure; source/mapping upgrade; OAuth invalid issuer/aud/nonce/PKCE; provider token expiry; notification permission denial; APNs/FCM token rotation; email bounce and rate limits; third-party outage; data export sanitization; PHI-free logs. Synthetic fixtures first; live real-device tests only under applicable gates.
 
-## Verified official platform references (2026-10-18)
+## Official platform references (to re-verify at implementation)
 - https://developer.apple.com/documentation/healthkit/authorizing-access-to-health-data — fine-grained HealthKit read/share; read denial not directly observable.
 - https://developer.android.com/health-and-fitness/health-connect/data-types — per-type permissions and optional history/background read permissions.
 - https://developer.android.com/health-and-fitness/health-connect/get-started — manifest and Play-related access setup.
