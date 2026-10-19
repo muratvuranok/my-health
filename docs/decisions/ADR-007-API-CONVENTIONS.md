@@ -1,6 +1,7 @@
 Status: ACCEPTED — conventions only; operation schemas NOT FROZEN
 Date: 2026-10-18
 Owner: My Health MASTER
+Owner acceptance: 2026-10-18 — owner chat instruction to approve current architecture and API contract documentation; acceptance limited strictly to API-wide conventions, never field-level request/response schemas.
 Supersedes: None
 Superseded by: None
 
@@ -13,7 +14,8 @@ My Health adopts **contract-first HTTP REST/JSON** for mobile-facing versioned A
 - UTF-8 JSON; **snake_case** field keys. Disallow duplicate JSON keys and unknown fields on security-critical write operations (document the exact policy in OpenAPI). Consistent null vs omitted vs empty semantics per schema.
 - Opaque public IDs (UUID recommended; no database sequence exposed); RFC3339 UTC instants with explicit offset, IANA timezone for recurring user schedules; local date and time are distinct typed values.
 - Exact decimal values represented as decimal strings for medication/measurement precision where relevant; unit codes and provenance required by domain rules still OPEN under ADR-009.
-- Stable machine error envelope proposed: `{"error":{"code":"invalid_field","request_id":"...","fields":[{"field":"...","code":"required"}]}}`. No sensitive info or user enumeration; client renders localized tr/az/en messages. Field set and errors require schema tests.
+- Canonical success envelope (for non-204 responses): `{"data":{...},"request_id":"..."}`; response schema owns exact `data` shape. HTTP 204 carries no JSON body.
+- Canonical error envelope (single source of truth): `{"error":{"code":"invalid_field","request_id":"...","fields":[{"field":"...","code":"required"}]}}`. All machine error codes, including nested field codes, use **lowercase snake_case**. `fields` is an array (may be empty); do not introduce top-level `code`, `message`, `details` or UPPER_CASE variants. No sensitive info or user enumeration; client renders localized tr/az/en messages. Field set and errors require schema tests.
 - Consistent 200 read/update, 201 created + Location, 202 accepted async, 204 successful no-body, 400 parse/shape, 401 authentication, 403 authorization when safe, 404 non-disclosing resource absence, 409 domain conflict, 412 failed If-Match, 422 semantic invalidity, 429 rate limit; each endpoint documents a finite subset. Retry-After for throttling where appropriate.
 - Pagination uses opaque cursor scoped to subject, filter and ordering; deterministic order, tombstone/change handling. Never unlimited multi-profile records.
 - Use If-Match/ETag optimistic concurrency for mutable resources and Idempotency-Key for create/action replays. Spell out duration, scope, replay outcomes and status semantics per operation; do not promise exactly-once provider delivery.
