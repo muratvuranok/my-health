@@ -17,7 +17,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 3. **ARCHITECTURE_AUDIT** — risk register and contract-freeze hold, not authority to reverse ACCEPTED decisions.
 4. **Plans/specifications** — draft design detail, binding only once accepted.
 5. **Handoff** — implementation instructions only within a current explicit authorization.
-**SUPERSEDED** and **SUSPENDED** documents are historical and NOT executable authority. **PROPOSED** and **DRAFT/OPEN** items cannot reverse accepted decisions. Conflict resolution: stop the affected implementation, record the ambiguity, seek an owner decision; do not infer acceptance from recency or an agent's recommendation.
+**FUTURE/PROPOSED module docs must not add entities, endpoints or tests to MVP scope until owner GO after interview evidence.** A document may list candidates for future phases only; they are non-binding for MVP implementation. **SUPERSEDED** and **SUSPENDED** documents are historical and NOT executable authority. **PROPOSED** and **DRAFT/OPEN** items cannot reverse accepted decisions. Conflict resolution: stop the affected implementation, record the ambiguity, seek an owner decision; do not infer acceptance from recency or an agent's recommendation.
 
 ## Accepted decisions — unchanged
 - **STR-001 ACCEPTED:** Türkiye and Azerbaijan first, then validated global expansion.
@@ -26,9 +26,9 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - **ADR-003 ACCEPTED:** My Health authoritative verified medication schedule; imports cannot silently overwrite it.
 - **ADR-004 ACCEPTED:** private TestFlight before public release, gated for real data.
 - **ADR-007 ACCEPTED (conventions only):** contract-first OpenAPI 3.1, snake_case, errors/compatibility; endpoint schemas and contract freeze remain OPEN.
-- **ADR-015 ACCEPTED (principles only):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
-- **ADR-016 ACCEPTED (integration boundaries only):** per-platform adapters, minimal per-type data access, separated OS/user/server authorization and provenance; integration API draft NOT FROZEN.
-- **ADR-017 ACCEPTED (single-product account/workspace structure):** One My Health identity and application; user chooses intended purpose at onboarding; module visibility and workspace contexts vary by eligibility, but workspace admin roles never confer patient-data access. Professional modules remain PROPOSED and gated.
+- **ADR-015 PROPOSED (no owner acceptance recorded):** device-local reminders, optional push and transactional email with privacy-first asynchronous delivery; notification API draft NOT FROZEN.
+- **ADR-016 PROPOSED (no owner acceptance recorded):** per-platform adapters, minimal per-type data access, separated OS/user/server authorization and provenance; integration API draft NOT FROZEN.
+- **ADR-017 ACCEPTED (single-product account/workspace structure):** One My Health identity and application; user chooses intended purpose at onboarding; module visibility and workspace contexts vary by eligibility, but workspace admin roles never confer patient-data access. Professional modules remain PROPOSED and gated; acceptance of a shared account does not add workspace schema to MVP.
 - **ADR-012 ACCEPTED IN PRINCIPLE:** bounded microservices and Kubernetes learning-first target. **ADR-013 is only PROPOSED**; no reversion to monolith approved.
 - **IOT-001 / MH-IOT-01:** one unified post-MVP connected-device initiative (tracking alias, not a second decision).
 
@@ -44,7 +44,7 @@ MASTER owns product strategy, accepted decisions, priorities, governance and rel
 - Hosting region and Türkiye/Azerbaijan legal/KVKK transfer review OPEN; pricing and business model OPEN; trademark/brand clearance OPEN; activation metric OPEN; web timing OPEN; actual Health Connect/HealthKit OS matrix OPEN.
 
 ## Implementation status
-**ARCHITECTURE PRINCIPLES APPROVED for ADR-007, 012, 015 and 016 only; integration/provider permission and notification event contracts remain draft. CONTRACT FREEZE: NO-GO** — existing API_CONTRACT and AUTH_DESIGN are outlines, not final OpenAPI request/response schemas. **CLAUDE_BACKEND_EXECUTION: SUSPENDED**; old local implementation GO is invalid for current topology and contract risk. A new implementation authorization requires an approved architecture/contract scope and current task. No code or CI is implied by these documents. Synthetic prototypes may be separately authorized; no claim of passed tests or legal compliance.
+**ARCHITECTURE STATUS:** ADR-007 API conventions and ADR-012 microservices/Kubernetes are accepted; ADR-017 single-product/onboarding structure is accepted. ADR-015 notifications and ADR-016 integrations remain PROPOSED pending explicit owner approval; their API drafts are not frozen. CONTRACT FREEZE: NO-GO** — existing API_CONTRACT and AUTH_DESIGN are outlines, not final OpenAPI request/response schemas. **CLAUDE_BACKEND_EXECUTION: SUSPENDED**; old local implementation GO is invalid for current topology and contract risk. A new implementation authorization requires an approved architecture/contract scope and current task. No code or CI is implied by these documents. Synthetic prototypes may be separately authorized; no claim of passed tests or legal compliance.
 
 ## Release gates
 GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-02 Apple/Android platform feasibility OPEN; GATE-03 sync/encryption/restore OPEN; GATE-04 real-data beta/TestFlight BLOCKED until prerequisites and explicit GO.
@@ -72,8 +72,8 @@ GATE-00 privacy/scope/security OPEN; GATE-01 medication correctness OPEN; GATE-0
 | [`docs/decisions/ADR-009-MEDICATION-DOMAIN.md`](docs/decisions/ADR-009-MEDICATION-DOMAIN.md) | DRAFT / OPEN |
 | [`docs/decisions/ADR-010-SYNC-ENCRYPTION.md`](docs/decisions/ADR-010-SYNC-ENCRYPTION.md) | DRAFT / OPEN |
 | [`docs/decisions/ADR-012-MICROSERVICES-KUBERNETES.md`](docs/decisions/ADR-012-MICROSERVICES-KUBERNETES.md) | ACCEPTED principle; details OPEN |
-| [`docs/decisions/ADR-015-NOTIFICATIONS-MESSAGING.md`](docs/decisions/ADR-015-NOTIFICATIONS-MESSAGING.md) | ACCEPTED messaging architecture; endpoint schema OPEN |
-| [`docs/decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md`](docs/decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md) | ACCEPTED integration boundaries; permission implementation OPEN |
+| [`docs/decisions/ADR-015-NOTIFICATIONS-MESSAGING.md`](docs/decisions/ADR-015-NOTIFICATIONS-MESSAGING.md) | PROPOSED notification architecture; endpoint schema OPEN |
+| [`docs/decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md`](docs/decisions/ADR-016-INTEGRATIONS-PERMISSIONS.md) | PROPOSED integration boundaries; permission implementation OPEN |
 | [`docs/decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md`](docs/decisions/ADR-017-UNIFIED-PRODUCT-MODULAR-WORKSPACES.md) | ACCEPTED single product, modular workspaces; professional releases PROPOSED |
 | [`docs/decisions/ADR-019-PERMISSIONED-MESSAGING.md`](docs/decisions/ADR-019-PERMISSIONED-MESSAGING.md) | PROPOSED messaging and relationship/consent design |
 | [`docs/decisions/ADR-018-MODULAR-ENTITLEMENTS-MONETIZATION.md`](docs/decisions/ADR-018-MODULAR-ENTITLEMENTS-MONETIZATION.md) | PROPOSED commercial packaging and entitlements |
